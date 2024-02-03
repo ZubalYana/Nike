@@ -18,4 +18,18 @@
         padding: 0 100px;
         justify-content: space-between;
     }
+    .productContainer{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+    .productItem{
+        padding: 20px;
+        border: 0.5px solid #999;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 10px;
+    }
 }
