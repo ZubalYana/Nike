@@ -74,6 +74,7 @@
 .wrap header .header_Icon {
   width: 18px;
   height: 18px;
+  cursor: pointer;
 }
 .wrap header #heart {
   margin: 0 29px;
@@ -88,6 +89,22 @@
   border-radius: 50%;
   background-color: #F67280;
   box-shadow: rgba(151, 29, 42, 0.251) 0 10px 15px;
+}
+.wrap header select {
+  width: 69px;
+  height: 30px;
+  background-color: #E7E9EB;
+  border-radius: 60px;
+  color: #11293B;
+  padding: 0 3px;
+  border: none;
+}
+.wrap header option {
+  width: 69px;
+  height: 30px;
+  color: #11293B;
+  font-size: 12px;
+  font-weight: 400;
 }
 .wrap .productContainer {
   width: 100%;

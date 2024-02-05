@@ -39,7 +39,7 @@ $('.addItem').click((e)=>{
             cardList.push(el);
         }
     }
-    $('#cart').text(`Cart ${cardList.length}`);
+    $('#header_icons_cardCount').text(`${cardList.length}`);
 })
 
 function showCartInner(cardList){
