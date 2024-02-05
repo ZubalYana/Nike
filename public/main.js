@@ -41,3 +41,20 @@ $('.addItem').click((e)=>{
     }
     $('#cart').text(`Cart ${cardList.length}`);
 })
+
+function showCartInner(cardList){
+    $('.cardPopupContainer').empty();
+    for(let el of cardList){
+        $('.cardPopupContainer').append(
+            `<div>${el.name}</div>`
+        )
+    }
+}
+$('#confirmBtn').click(()=>{
+    let data = {
+        list: cardList,
+        name: $('#userName').val(),
+        phone: $('#phone').val(),
+    }
+    axios.post('http://localhost:3000/save-order', data)
+})
