@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Montserrat;
+    font-family: Poppins;
 }
 .wrap{
     width: 100%;
@@ -17,6 +17,34 @@
         align-items: center;
         padding: 0 100px;
         justify-content: space-between;
+        padding-top: 22px;
+        .logo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 23px;
+            font-weight: 600;
+        }
+        .logo_img{
+            width: 32px;
+        }
+        .header_menuBtn{
+            width: 114px;
+            height: 56px;
+            background-color: #E7E9EB;
+            border-radius: 60px;
+            color: #11293B;
+            font-size: 18px;
+            font-weight: 400;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .menuBtn_img{
+            width: 18px;
+            margin-right: 12px;
+        }
     }
     .productContainer{
         width: 100%;
@@ -45,4 +73,7 @@
     align-items: center;
     border-radius: 10px;
 
+}
+button{
+    cursor: pointer;
 }
