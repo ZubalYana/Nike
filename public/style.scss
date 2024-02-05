@@ -15,7 +15,7 @@
         height: 10vh;
         display: flex;
         align-items: center;
-        padding: 0 100px;
+        padding: 0 50px;
         justify-content: space-between;
         padding-top: 22px;
         .logo{
@@ -124,14 +124,70 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
+        margin-top: 100px;
     }
     .productItem{
         padding: 20px;
-        border: 0.5px solid #999;
+        // border: 0.5px solid #999;
         display: flex;
         flex-direction: column;
         align-items: center;
-        border-radius: 10px;
+        width: 245px;
+        .productItem_imgBg{
+            width: 245px;
+            height: 282px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #7BE498;
+            border-radius: 20px;
+        }
+        .sneakersImg{
+            width: 322px;
+        }
+        h3{
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .productItem_infoContainer{
+            // display: flex;
+            // flex-direction: column;
+            // align-items: flex-start;
+            // width: 100%;
+            margin-top: 20px;
+        }
+        p{
+            color: #FD4E61;
+            font-size: 19px;
+            font-weight: 400;
+        }
+        .previousPrice{
+            color: #11293B;
+            font-size: 19px;
+            font-weight: 400; 
+        }
+        .productItem_prices{
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .addItem{
+            width: 245px;
+            height: 60px;
+            background-color: #E7E9EB;
+            border-radius: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #11293B;
+            border: none;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .sneakersBtnIcon{
+            width: 19px;
+            margin-right: 12px;
+        }
     }
 }
 .cartPopup{
@@ -141,7 +197,7 @@
     bottom: 50px;
     right: 50px;
     border: 0.5px solid #999;
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     border-radius: 10px;

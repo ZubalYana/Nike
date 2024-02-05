@@ -2,31 +2,50 @@ let db = [
     {
         id: 1,
         name: 'Nike Air',
-        price: 180
+        price: '$180',
+        img: './imgs/nike air.png',
+        bg: '#7BE498',
+        previousPrice: '$289',
     },
     {
         id: 2,
         name: 'Air Jordan',
-        price: 199
+        price: '$199',
+        img: './imgs/air jordan.png',
+        bg: '#F5E6FF',
+        previousPrice: '$289',
     },
     {
         id: 3,
         name: 'Nike Nitro',
-        price: 135
+        price: '$135',
+        img: './imgs/nike netro.png',
+        bg: '#F7C29B',
+        previousPrice: '$289',
     },
     {
         id: 4,
         name: 'Air Spain',
-        price: 149
+        price: '$149',
+        img: './imgs/nike spain.png',
+        bg: '#68EAEB',
+        previousPrice: '$199',
     },
 ];
 
 for(let el of db){
     $('.productContainer').append(
         `<div class="productItem">
+        <div class='productItem_imgBg'>
+        <img class='sneakersImg' src='${el.img}' ></div>
+        <div class='productItem_infoContainer'>
         <h3>${el.name}</h3>
+        <div class='productItem_prices'>
         <p>${el.price}</p>
-        <button class='addItem' id='${el.id}'>Add to cart</button>
+        <p class='previousPrice'><s>${el.previousPrice}</s></p>
+        </div>
+        <button class='addItem' id='${el.id}'><img class='sneakersBtnIcon' src='./imgs/sneakersBtn icon.png'>Add to cart</button>
+        </div>
         </div>`
     )
 }
