@@ -28,6 +28,11 @@
         .logo_img{
             width: 32px;
         }
+        .header_leftBtnsContainer{
+            width: 324px;
+            display: flex;
+            justify-content: space-between;
+        }
         .header_menuBtn{
             width: 114px;
             height: 56px;
@@ -67,6 +72,8 @@
             width: 146px;
             display: flex;
             justify-content: center;
+            margin-right: -280px;
+
         }
         .header_Icon{
             width: 18px;
@@ -87,14 +94,21 @@
             background-color: #F67280;
             box-shadow: rgba(151, 29, 42, 0.251) 0 10px 15px;
         }
+        .header_SelectesCon{
+            width: 147px;
+            display: flex;
+            justify-content: space-between;
+        }
         select{
             width: 69px;
             height: 30px;
             background-color: #E7E9EB;
             border-radius: 60px;
             color: #11293B;
-            padding: 0 3px;
+            padding: 0 10px;
             border: none;
+            display: flex;
+            justify-content: center;
         }
         option{
             width: 69px;
@@ -102,6 +116,7 @@
             color: #11293B;
             font-size: 12px;
             font-weight: 400;
+
         }
     }
     .productContainer{

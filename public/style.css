@@ -31,6 +31,11 @@
 .wrap header .logo_img {
   width: 32px;
 }
+.wrap header .header_leftBtnsContainer {
+  width: 324px;
+  display: flex;
+  justify-content: space-between;
+}
 .wrap header .header_menuBtn {
   width: 114px;
   height: 56px;
@@ -70,6 +75,7 @@
   width: 146px;
   display: flex;
   justify-content: center;
+  margin-right: -280px;
 }
 .wrap header .header_Icon {
   width: 18px;
@@ -90,14 +96,21 @@
   background-color: #F67280;
   box-shadow: rgba(151, 29, 42, 0.251) 0 10px 15px;
 }
+.wrap header .header_SelectesCon {
+  width: 147px;
+  display: flex;
+  justify-content: space-between;
+}
 .wrap header select {
   width: 69px;
   height: 30px;
   background-color: #E7E9EB;
   border-radius: 60px;
   color: #11293B;
-  padding: 0 3px;
+  padding: 0 10px;
   border: none;
+  display: flex;
+  justify-content: center;
 }
 .wrap header option {
   width: 69px;
