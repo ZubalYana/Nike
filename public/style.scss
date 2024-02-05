@@ -45,6 +45,47 @@
             width: 18px;
             margin-right: 12px;
         }
+        .header_searchBtn{
+            width: 200px;
+            height: 56px;
+            background-color: #E7E9EB;
+            border-radius: 60px;
+            color: #11293B;
+            font-size: 18px;
+            font-weight: 400;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding-left: 18px;
+        }
+        .searchBtn_img{
+            width: 17px;
+            margin-right: 10px;
+        }
+        .header_iconsCon{
+            width: 146px;
+            display: flex;
+            justify-content: center;
+        }
+        .header_Icon{
+            width: 18px;
+            height: 18px;
+        }
+        #heart{
+            margin: 0 29px;
+        }
+        .header_icons_cardCount{
+            width: 28px;
+            height: 28px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            border-radius: 50%;
+            background-color: #F67280;
+            box-shadow: rgba(151, 29, 42, 0.251) 0 10px 15px;
+        }
     }
     .productContainer{
         width: 100%;
