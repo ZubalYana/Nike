@@ -242,7 +242,7 @@
         justify-content: space-between;
         margin-top: 26px;
         .leftHiddenAdv{
-            width: 90px;
+            width: 130px;
             height: 441px;
             border-radius: 0 40px 40px 0;
             background-color: #FFDC62;
@@ -310,12 +310,32 @@
             }
         }
         .rightHiddenAdv{
-            width: 90px;
+            width: 130px;
             height: 441px;
-            border-radius:40px 0 0 40px;
+            border-radius: 40px 0 0 40px;
             background-color: #D3FBD9;
         }
-
+        .advContainer_arrows{
+            position: absolute;
+            width: 100%;
+            height: 441px;
+            padding: 0 120px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .advContainer_arrow{
+                width: 60px;
+                height: 60px;
+                background-color: #fff;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                .advContainer_arrowImg{
+                    width: 18px;
+                }
+            }
+        }
     }
 }
 .cartPopup{
