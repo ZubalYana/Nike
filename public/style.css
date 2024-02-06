@@ -231,24 +231,35 @@
   width: 16px;
   height: 16px;
 }
-.wrap .advContainer {
+.wrap .advContainer .mainAdv {
   width: 1100px;
   height: 441px;
   background-color: #FFE2B5;
   border-radius: 40px;
-  padding: 65px;
   margin-top: 26px;
+  display: flex;
 }
-.wrap .advContainer h1 {
+.wrap .advContainer .mainAdv .picturePart {
+  width: 60%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.wrap .advContainer .mainAdv .textPart {
+  padding: 65px;
+}
+.wrap .advContainer .mainAdv h1 {
   font-weight: 400;
   font-size: 52px;
   width: 430px;
 }
-.wrap .advContainer h5 {
+.wrap .advContainer .mainAdv h5 {
   font-size: 20px;
   font-weight: 400;
 }
-.wrap .advContainer button {
+.wrap .advContainer .mainAdv button {
   width: 155px;
   height: 60px;
   background-color: #000;
@@ -262,9 +273,24 @@
   margin-top: 20px;
   box-shadow: 15px 0 30px rgba(16, 76, 74, 0.251);
 }
-.wrap .advContainer .textPart_BtnArrow {
+.wrap .advContainer .mainAdv .textPart_BtnArrow {
   width: 18px;
   margin-left: 14px;
+}
+.wrap .advContainer .mainAdv .advContainer_mainImg {
+  width: 545px;
+  position: absolute;
+  bottom: -35px;
+  right: 30px;
+  z-index: 5;
+}
+.wrap .advContainer .mainAdv .backgroundText {
+  position: absolute;
+  font-size: 220px;
+  font-weight: 700;
+  color: #F5CF94;
+  top: 100px;
+  right: 35px;
 }
 
 .cartPopup {
