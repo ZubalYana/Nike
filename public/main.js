@@ -44,6 +44,16 @@ for(let el of db){
         <p>${el.price}</p>
         <p class='previousPrice'><s>${el.previousPrice}</s></p>
         </div>
+        <div class="colorsContainer">
+        <div class="colorBtn">color</div>
+        <div class="colorsCircles">
+            <div class="colorCircle" id="main"></div>
+            <div class="colorCircle" id="red"></div>
+            <div class="colorCircle" id="orange"></div>
+            <div class="colorCircle" id="yellow"></div>
+            <div class="colorCircle" id="green"></div>
+        </div>
+    </div>
         <button class='addItem' id='${el.id}'><img class='sneakersBtnIcon' src='./imgs/sneakersBtn icon.png'>Add to cart</button>
         </div>
         </div>`

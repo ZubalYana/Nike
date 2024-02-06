@@ -188,6 +188,53 @@
             width: 19px;
             margin-right: 12px;
         }
+        .colorsContainer{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin: 15px 0;
+        }
+        .colorBtn{
+            width: 71px;
+            height: 25px;
+            background-color: rgba(69, 142, 246, 0.26);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 30px;
+            color: #458EF6;
+            font-size: 10px;
+            font-weight: 700;
+        }
+        .colorsCircles{
+            width: 90px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .colorCircle{
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+        }
+        #red{
+            background-color: #E61800;
+        }
+        #orange{
+            background-color: #E67100;
+        }
+        #yellow{
+            background-color: #E6C400;
+        }
+        #green{
+            background-color: #70B200;
+        }
+        #main{
+            border: 5px double rgb(255, 255, 255);
+            background-color: #000;
+            width: 16px;
+            height: 16px;
+        }
     }
 }
 .cartPopup{
