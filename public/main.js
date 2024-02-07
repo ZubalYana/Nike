@@ -77,7 +77,7 @@ $('.addItem').click((e)=>{
                         <button class="order_btn">Delete</button>
                     </div>
                 </div>
-                <img class="cardPopupContainer_orderImg" src="${el.img} alt="">
+                <img class="cardPopupContainer_orderImg" src="${el.img}" alt="">
         
             </div>`
             )
