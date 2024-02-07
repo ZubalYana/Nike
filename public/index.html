@@ -8,13 +8,23 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.7/axios.js' integrity='sha512-BK9PHgiHWfibD1gZHjigMVxh6wMAFhiGa8FV3mYdGIHO7QJWlP/Uy2kTw3ykOLd9OtSJyPSqPNKIRiSmAFw6UA==' crossorigin='anonymous'></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css' integrity='sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ==' crossorigin='anonymous'/>
 </head>
 <body>
     <div class="cartPopup">
         <div class="cardPopupContainer"></div>
-        <input type="text" placeholder="Name" id="userName">
+
+        <div class="cartPopup_ordersContainer">
+            <i class="fa-solid fa-xmark xmark"></i>
+            <h3>You chose:</h3>
+            <div class="cartPopup_ordersContainer_orders">
+
+            </div>
+            <button class="cardPopupContainer_orderBtn">Order</button>
+        </div>
+        <!-- <input type="text" placeholder="Name" id="userName">
         <input type="text" placeholder="Phone" id="phone">
-        <button id="confirmBtn">Confirm</button>
+        <button id="confirmBtn">Confirm</button> -->
     </div>
     <div class="wrap">
         <header>

@@ -58,6 +58,7 @@ for(let el of db){
         </div>
         </div>`
     )
+
 }
 
 
@@ -66,6 +67,20 @@ $('.addItem').click((e)=>{
     for(let el of db){
         if(el.id == e.target.id){
             cardList.push(el);
+            $('.cartPopup_ordersContainer_orders').append(
+                `<div class="cardPopupContainer_order">
+                <div class="cardPopupContainer_order_textPart">
+                    <h2>${el.name}</h2>
+                    <h3 class="cartPopup_ordersContainer_price">${el.price}</h3>
+                    <div class="cardPopupContainer_order_buttons">
+                        <button class="order_btn">View</button>
+                        <button class="order_btn">Delete</button>
+                    </div>
+                </div>
+                <img class="cardPopupContainer_orderImg" src="${el.img} alt="">
+        
+            </div>`
+            )
         }
     }
     $('#header_icons_cardCount').text(`${cardList.length}`);
