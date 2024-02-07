@@ -4,6 +4,26 @@
     box-sizing: border-box;
     font-family: Poppins;
 }
+/* Width */
+::-webkit-scrollbar {
+    width: 10px; /* Width of the scrollbar */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #fff; /* Color of the scrollbar track */
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #a8a8a8; /* Color of the scrollbar handle */
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the scrollbar handle on hover */
+  }
+  
 .wrap{
     width: 100%;
     height: 100vh;
@@ -360,76 +380,81 @@
     background-color: #ffffff;
     padding: 10px;
     //E47B7B, 7B7FE4
-    .xmark{
-        font-size: 16px;
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        cursor: pointer;
+
+    .cartPopup_ordersContainer{
+        .xmark{
+            font-size: 16px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .cartPopup_ordersContainer_orders{
+            margin-top: 20px;
+            width: 300px;
+            max-height: 230px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            
+        }
+        .cardPopupContainer_order{
+            width: 280px;
+            height: 110px;
+            border-radius: 10px;
+            border: 2px #000 solid;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .cardPopupContainer_orderBtn{
+            width: 300px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 600;
+            background-color: #fff;
+            box-shadow: #000 2px 2px 4px;
+            border: none;
+            border-radius: 20px;
+            margin-top: 20px;
+        }
+        .cardPopupContainer_order_textPart{
+            margin-right: 12px;
+        }
+        .cardPopupContainer_orderImg{
+            height: 110px;
+        }
+        h2{
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .cartPopup_ordersContainer_price{
+            font-size: 16px;
+            font-weight: 400;
+        }
+        .cardPopupContainer_order_buttons{
+            display: flex;
+            width: 120px;
+            justify-content: space-between;
+        }
+        .order_btn{
+            width: 55px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: #a8a8a8 3px 3px 3px;
+            font-size: 12px;
+            font-weight: 500px;
+            border: none;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
     }
-    .cartPopup_ordersContainer_orders{
-        margin-top: 20px;
-        width: 300px;
-        max-height: 230px;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-    .cardPopupContainer_order{
-        width: 280px;
-        height: 110px;
-        border-radius: 10px;
-        border: 2px #000 solid;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-    .cardPopupContainer_orderBtn{
-        width: 300px;
-        height: 60px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 24px;
-        font-weight: 600;
-        background-color: #fff;
-        box-shadow: #000 2px 2px 4px;
-        border: none;
-        border-radius: 20px;
-        margin-top: 20px;
-    }
-    .cardPopupContainer_order_textPart{
-        margin-right: 12px;
-    }
-    .cardPopupContainer_orderImg{
-        height: 110px;
-    }
-    h2{
-        font-size: 20px;
-        font-weight: 700;
-    }
-    .cartPopup_ordersContainer_price{
-        font-size: 16px;
-        font-weight: 400;
-    }
-    .cardPopupContainer_order_buttons{
-        display: flex;
-        width: 120px;
-        justify-content: space-between;
-    }
-    .order_btn{
-        width: 55px;
-        height: 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: #a8a8a8 3px 3px 3px;
-        font-size: 12px;
-        font-weight: 500px;
-        border: none;
-        border-radius: 10px;
-        margin-top: 5px;
-    }
+    
 
 }
 button{

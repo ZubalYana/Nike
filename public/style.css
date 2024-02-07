@@ -5,6 +5,26 @@
   font-family: Poppins;
 }
 
+/* Width */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #fff; /* Color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a8a8a8; /* Color of the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar handle on hover */
+}
+
 .wrap {
   width: 100%;
   height: 100vh;
@@ -353,21 +373,21 @@
   background-color: #ffffff;
   padding: 10px;
 }
-.cartPopup .xmark {
+.cartPopup .cartPopup_ordersContainer .xmark {
   font-size: 16px;
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
 }
-.cartPopup .cartPopup_ordersContainer_orders {
+.cartPopup .cartPopup_ordersContainer .cartPopup_ordersContainer_orders {
   margin-top: 20px;
   width: 300px;
   max-height: 230px;
   overflow-y: auto;
   overflow-x: hidden;
 }
-.cartPopup .cardPopupContainer_order {
+.cartPopup .cartPopup_ordersContainer .cardPopupContainer_order {
   width: 280px;
   height: 110px;
   border-radius: 10px;
@@ -377,7 +397,7 @@
   align-items: center;
   margin-bottom: 10px;
 }
-.cartPopup .cardPopupContainer_orderBtn {
+.cartPopup .cartPopup_ordersContainer .cardPopupContainer_orderBtn {
   width: 300px;
   height: 60px;
   display: flex;
@@ -391,26 +411,26 @@
   border-radius: 20px;
   margin-top: 20px;
 }
-.cartPopup .cardPopupContainer_order_textPart {
+.cartPopup .cartPopup_ordersContainer .cardPopupContainer_order_textPart {
   margin-right: 12px;
 }
-.cartPopup .cardPopupContainer_orderImg {
+.cartPopup .cartPopup_ordersContainer .cardPopupContainer_orderImg {
   height: 110px;
 }
-.cartPopup h2 {
+.cartPopup .cartPopup_ordersContainer h2 {
   font-size: 20px;
   font-weight: 700;
 }
-.cartPopup .cartPopup_ordersContainer_price {
+.cartPopup .cartPopup_ordersContainer .cartPopup_ordersContainer_price {
   font-size: 16px;
   font-weight: 400;
 }
-.cartPopup .cardPopupContainer_order_buttons {
+.cartPopup .cartPopup_ordersContainer .cardPopupContainer_order_buttons {
   display: flex;
   width: 120px;
   justify-content: space-between;
 }
-.cartPopup .order_btn {
+.cartPopup .cartPopup_ordersContainer .order_btn {
   width: 55px;
   height: 25px;
   display: flex;
