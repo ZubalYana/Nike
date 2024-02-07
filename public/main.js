@@ -33,6 +33,8 @@ let db = [
     },
 ];
 
+$('.cartPopup').hide(0);
+
 for(let el of db){
     $('.productContainer').append(
         `<div class="productItem">
@@ -101,4 +103,12 @@ $('#confirmBtn').click(()=>{
         phone: $('#phone').val(),
     }
     axios.post('http://localhost:3000/save-order', data)
+})
+
+$('#cart').click(()=>{
+    $('.cartPopup').slideToggle(500);
+})
+$('.xmark').click(()=>{
+    $('.cartPopup').slideUp(500);
+
 })
