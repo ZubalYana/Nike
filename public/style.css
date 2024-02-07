@@ -124,7 +124,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 .wrap .productItem {
   padding: 20px;
@@ -139,7 +139,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #7BE498;
+  background-color: #F7C29B;
   border-radius: 20px;
 }
 .wrap .productItem .sneakersImg {
@@ -306,6 +306,8 @@
 .wrap .advContainer .mainAdv .mainAdv_shoesPic {
   width: 288px;
   position: absolute;
+  top: 400px;
+  left: 500px;
 }
 .wrap .advContainer .rightHiddenAdv {
   width: 130px;
