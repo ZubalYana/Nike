@@ -303,6 +303,10 @@
   top: 100px;
   right: 35px;
 }
+.wrap .advContainer .mainAdv .mainAdv_shoesPic {
+  width: 288px;
+  position: absolute;
+}
 .wrap .advContainer .rightHiddenAdv {
   width: 130px;
   height: 441px;
