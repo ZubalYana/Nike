@@ -394,7 +394,7 @@
   margin-bottom: 10px;
 }
 .cartPopup .cartPopup_ordersContainer .cardPopupContainer_orderBtn {
-  width: 300px;
+  width: 200px;
   height: 60px;
   display: flex;
   justify-content: center;
@@ -406,6 +406,10 @@
   border: none;
   border-radius: 20px;
   margin-top: 20px;
+}
+.cartPopup .cartPopup_ordersContainer .cardPopupContainer_orderBtn:hover {
+  background-color: #000;
+  color: #fff;
 }
 .cartPopup .cartPopup_ordersContainer .cardPopupContainer_order_textPart {
   margin-right: 12px;
