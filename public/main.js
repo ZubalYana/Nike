@@ -110,3 +110,7 @@ $('.cardPopupContainer_orderBtn').click(()=>{
     $('.cartPopup_ordersContainer').css('display', 'none')
     $('.cartPopup_paymentContainer').css('display', 'flex')
 })
+$('.xmark2').click(()=>{
+    $('.cartPopup_ordersContainer').css('display', 'flex')
+    $('.cartPopup_paymentContainer').css('display', 'none')
+})
