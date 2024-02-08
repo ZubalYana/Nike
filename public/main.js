@@ -32,9 +32,7 @@ let db = [
         previousPrice: '$199',
     },
 ];
-
 $('.cartPopup').hide(0);
-
 for(let el of db){
     $('.productContainer').append(
         `<div class="productItem">
@@ -62,8 +60,6 @@ for(let el of db){
     )
 
 }
-
-
 let cardList = [];
 $('.addItem').click((e)=>{
     for(let el of db){
@@ -87,7 +83,6 @@ $('.addItem').click((e)=>{
     }
     $('#header_icons_cardCount').text(`${cardList.length}`);
 })
-
 function showCartInner(cardList){
     $('.cardPopupContainer').empty();
     for(let el of cardList){
@@ -104,7 +99,6 @@ $('#confirmBtn').click(()=>{
     }
     axios.post('http://localhost:3000/save-order', data)
 })
-
 $('#cart').click(()=>{
     $('.cartPopup').slideToggle(500);
 })
