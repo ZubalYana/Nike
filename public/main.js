@@ -126,4 +126,13 @@ $('.xmark2').click(()=>{
     $('.cartPopup_ordersContainer').css('display', 'flex')
     $('.cartPopup_paymentContainer').css('display', 'none')
 })
+$('.xmark3').click(()=>{
+    $('.cartPopup').slideUp(500);
+    setTimeout(() => {
+        $('.cartPopup_orderDetails').css('display', 'none')
+        $('.cartPopup_ordersContainer').css('display', 'flex')
+    }, 500);
+
+
+})
 
