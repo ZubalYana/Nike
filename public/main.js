@@ -60,7 +60,13 @@ for(let el of db){
     )
 
 }
+
+
+
 let cardList = [];
+
+
+
 $('.addItem').click((e)=>{
     for(let el of db){
         if(el.id == e.target.id){
@@ -81,6 +87,12 @@ $('.addItem').click((e)=>{
             )
         }
     }
+    let totalPrice = 0;
+    $.each(cardList, function(index, product) {
+        const price = Number(product.price.replace('$', ''));
+        totalPrice += price;
+    });
+    $('#confirmBtn').text(`Pay: $${totalPrice}`)
     $('#header_icons_cardCount').text(`${cardList.length}`);
 })
 function showCartInner(cardList){
@@ -100,7 +112,6 @@ $('#confirmBtn').click(()=>{
         expiryDate: $('#expiryDate').val(),
         securityCode: $('#securityCode').val(),
         postOffice: $('#postOffice').val(),
-
     }
     axios.post('http://localhost:3000/save-order', data)
 })
@@ -119,3 +130,4 @@ $('.xmark2').click(()=>{
     $('.cartPopup_ordersContainer').css('display', 'flex')
     $('.cartPopup_paymentContainer').css('display', 'none')
 })
+
