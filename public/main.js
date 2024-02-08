@@ -106,3 +106,7 @@ $('.xmark').click(()=>{
     $('.cartPopup').slideUp(500);
 
 })
+$('.cardPopupContainer_orderBtn').click(()=>{
+    $('.cartPopup_ordersContainer').css('display', 'none')
+    $('.cartPopup_paymentContainer').css('display', 'flex')
+})
