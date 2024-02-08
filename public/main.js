@@ -60,13 +60,7 @@ for(let el of db){
     )
 
 }
-
-
-
 let cardList = [];
-
-
-
 $('.addItem').click((e)=>{
     for(let el of db){
         if(el.id == e.target.id){
@@ -114,6 +108,8 @@ $('#confirmBtn').click(()=>{
         postOffice: $('#postOffice').val(),
     }
     axios.post('http://localhost:3000/save-order', data)
+    $('.cartPopup_paymentContainer').css('display', 'none')
+    $('.cartPopup_orderDetails').css('display', 'flex')
 })
 $('#cart').click(()=>{
     $('.cartPopup').slideToggle(500);
