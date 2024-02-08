@@ -99,6 +99,7 @@ $('#confirmBtn').click(()=>{
         cardNum: $('#cardNum').val(),
         expiryDate: $('#expiryDate').val(),
         securityCode: $('#securityCode').val(),
+        postOffice: $('#postOffice').val(),
 
     }
     axios.post('http://localhost:3000/save-order', data)
