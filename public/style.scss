@@ -461,7 +461,7 @@
             margin-bottom: 20px;
         }
         input{
-            width: 90%;
+            width: 290px;
             height: 40px;
             border-radius: 10px;
             border: 3px solid #a8a8a8;
@@ -479,6 +479,7 @@
             box-shadow: #000 2px 2px 4px;
             border: none;
             border-radius: 20px;
+            margin-top: 10px;
             
         }
         #confirmBtn:hover{
@@ -491,6 +492,16 @@
             top: 10px;
             right: 10px;
             cursor: pointer;
+        }
+        .cartPopup_paymentContainer_InputsCon{
+            display: flex;
+            width: 300px;
+        }
+        #expiryDate, #securityCode{
+            width: 140px;
+        }
+        #expiryDate{
+            margin-right: 10px;
         }
     }
     

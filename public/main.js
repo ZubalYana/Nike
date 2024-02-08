@@ -96,6 +96,10 @@ $('#confirmBtn').click(()=>{
         list: cardList,
         name: $('#userName').val(),
         phone: $('#phone').val(),
+        cardNum: $('#cardNum').val(),
+        expiryDate: $('#expiryDate').val(),
+        securityCode: $('#securityCode').val(),
+
     }
     axios.post('http://localhost:3000/save-order', data)
 })

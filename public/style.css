@@ -456,7 +456,7 @@
   margin-bottom: 20px;
 }
 .cartPopup .cartPopup_paymentContainer input {
-  width: 90%;
+  width: 290px;
   height: 40px;
   border-radius: 10px;
   border: 3px solid #a8a8a8;
@@ -474,6 +474,7 @@
   box-shadow: #000 2px 2px 4px;
   border: none;
   border-radius: 20px;
+  margin-top: 10px;
 }
 .cartPopup .cartPopup_paymentContainer #confirmBtn:hover {
   background-color: #000;
@@ -485,6 +486,16 @@
   top: 10px;
   right: 10px;
   cursor: pointer;
+}
+.cartPopup .cartPopup_paymentContainer .cartPopup_paymentContainer_InputsCon {
+  display: flex;
+  width: 300px;
+}
+.cartPopup .cartPopup_paymentContainer #expiryDate, .cartPopup .cartPopup_paymentContainer #securityCode {
+  width: 140px;
+}
+.cartPopup .cartPopup_paymentContainer #expiryDate {
+  margin-right: 10px;
 }
 
 button {
