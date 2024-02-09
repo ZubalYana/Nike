@@ -522,6 +522,17 @@
   font-size: 12px;
   font-weight: 400;
 }
+.cartPopup .cartPopup_orderDetails .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 23px;
+  font-weight: 600;
+  margin-top: 50px;
+}
+.cartPopup .cartPopup_orderDetails .logo_img {
+  width: 32px;
+}
 
 button {
   cursor: pointer;
