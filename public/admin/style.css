@@ -21,10 +21,25 @@
     padding: 30px;
     margin-top: 20px;
     display: flex;
-    justify-content: space-around;
     align-items: center;
 }
 .orderItem{
     margin-right: 10px;
     display: flex;
+}
+.orderElement_userImg{
+    width: 70px;
+}
+.orderElement_nameAndPhoneCon{
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px;
+}
+.orderElement_name{
+    font-size: 24px;
+    font-weight: 700;
+}
+.orderElement_phone{
+    font-size: 20px;
+    font-weight: 500;
 }

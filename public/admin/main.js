@@ -12,10 +12,14 @@ axios.get('http://localhost:3000/getorders')
         }
         $('.ordersContainer').append(
             `<div class="orderElement">
-            <h3>${el.name}</h3>
-            <h3>${el.phone}</h3>
+            <img class='orderElement_userImg' src="./img/userImg.png">
+            <div class='orderElement_nameAndPhoneCon'>
+            <h3 class='orderElement_name'>${el.name}</h3>
+            <h3 class='orderElement_phone'>${el.phone}</h3>
+            </div>
+
             <h3 class='orderItems'></h3>
-            <div>${sum}</div>
+            <div>$${sum}</div>
         </div>`
         )
         
