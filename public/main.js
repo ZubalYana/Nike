@@ -53,7 +53,7 @@ for(let el of db){
         <div class='productItem_infoContainer'>
         <h3>${el.name}</h3>
         <div class='productItem_prices'>
-        <p>${el.price}</p>
+        <p>$${el.price}</p>
         <p class='previousPrice'><s>${el.previousPrice}</s></p>
         </div>
         <div class="colorsContainer">
@@ -81,7 +81,7 @@ $('.addItem').click((e)=>{
                 `<div class="cardPopupContainer_order">
                 <div class="cardPopupContainer_order_textPart">
                     <h2>${el.name}</h2>
-                    <h3 class="cartPopup_ordersContainer_price">${el.price}</h3>
+                    <h3 class="cartPopup_ordersContainer_price">$${el.price}</h3>
                     <div class="cardPopupContainer_order_buttons">
                         <button class="order_btn">View</button>
                         <button class="order_btn">Delete</button>
