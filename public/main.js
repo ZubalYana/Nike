@@ -6,6 +6,9 @@ let db = [
         img: './imgs/nike air.png',
         bg: '#7BE498',
         previousPrice: '$289',
+        backGroundColor: '#7BE498',
+        picWidth: 354,
+        picHeight: 312, 
     },
     {
         id: 2,
@@ -14,6 +17,9 @@ let db = [
         img: './imgs/air jordan.png',
         bg: '#F5E6FF',
         previousPrice: '$289',
+        backGroundColor: '#F5E6FF',
+        picWidth: 322,
+        picHeight: 265, 
     },
     {
         id: 3,
@@ -22,6 +28,9 @@ let db = [
         img: './imgs/nike netro.png',
         bg: '#F7C29B',
         previousPrice: '$289',
+        backGroundColor: '#F7C29B',
+        picWidth: 447,
+        picHeight: 448, 
     },
     {
         id: 4,
@@ -30,14 +39,17 @@ let db = [
         img: './imgs/nike spain.png',
         bg: '#68EAEB',
         previousPrice: '$199',
+        backGroundColor: '#68EAEB',
+        picWidth: 336,
+        picHeight: 284, 
     },
 ];
 $('.cartPopup').hide(0);
 for(let el of db){
     $('.productContainer').append(
         `<div class="productItem">
-        <div class='productItem_imgBg'>
-        <img class='sneakersImg' src='${el.img}' ></div>
+        <div class='productItem_imgBg' style="background-color: ${el.backGroundColor};">
+        <img class='sneakersImg' src='${el.img}' style="width: ${el.picWidth}px; height: ${el.picHeight}px; margin-right: 22px" ></div>
         <div class='productItem_infoContainer'>
         <h3>${el.name}</h3>
         <div class='productItem_prices'>

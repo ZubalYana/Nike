@@ -1,0 +1,1 @@
+[{"name":"Yana","phone":"0972058786","list":[{"id":1,"name":"Nike Air","price":"$180","img":"./imgs/nike air.png","bg":"#7BE498","previousPrice":"$289"},{"id":1,"name":"Nike Air","price":"$180","img":"./imgs/nike air.png","bg":"#7BE498","previousPrice":"$289"}]}]
