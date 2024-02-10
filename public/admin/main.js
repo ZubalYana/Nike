@@ -27,10 +27,10 @@ axios.get('http://localhost:3000/getorders')
         for(let item of el.list){
             $('.orderItems').append(
                 
-                `<h3 class='orderItem'
-                <div>${item.name}</div>
+                `<div class='orderItem'>
+                <div class='orderItem_orderElName'>${item.name}</div>
 
-                </h3>
+                </div>
                 `
             )
         }
