@@ -2,7 +2,7 @@ let db = [
     {
         id: 1,
         name: 'Nike Air',
-        price: '$180',
+        price: 180,
         img: './imgs/nike air.png',
         bg: '#7BE498',
         previousPrice: '$289',
@@ -13,7 +13,7 @@ let db = [
     {
         id: 2,
         name: 'Air Jordan',
-        price: '$199',
+        price: 199,
         img: './imgs/air jordan.png',
         bg: '#F5E6FF',
         previousPrice: '$289',
@@ -24,7 +24,7 @@ let db = [
     {
         id: 3,
         name: 'Nike Nitro',
-        price: '$135',
+        price: 135,
         img: './imgs/nike netro.png',
         bg: '#F7C29B',
         previousPrice: '$289',
@@ -35,7 +35,7 @@ let db = [
     {
         id: 4,
         name: 'Air Spain',
-        price: '$149',
+        price: 149,
         img: './imgs/nike spain.png',
         bg: '#68EAEB',
         previousPrice: '$199',
@@ -95,7 +95,7 @@ $('.addItem').click((e)=>{
     }
     let totalPrice = 0;
     $.each(cardList, function(index, product) {
-        const price = Number(product.price.replace('$', ''));
+        const price = Number(product.price);
         totalPrice += price;
     });
     $('#confirmBtn').text(`Pay: $${totalPrice}`)
@@ -164,4 +164,3 @@ $('.xmark3').click(()=>{
 
 
 })
-
