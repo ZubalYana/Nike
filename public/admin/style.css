@@ -63,5 +63,14 @@
     width: 32px;
 }
 .header{
+    width: 54%;
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+i{
+    position: absolute;
+    font-size: 24px;
+    top: 20px;
+    right: 20px;
 }
