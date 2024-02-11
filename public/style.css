@@ -195,6 +195,14 @@
   border: none;
   font-size: 20px;
   font-weight: 400;
+  transition: 0.3s ease;
+}
+.wrap .productItem .addItem:hover {
+  background-color: #11293B;
+  color: #E7E9EB;
+}
+.wrap .productItem .addItem:hover i {
+  color: #E7E9EB;
 }
 .wrap .productItem .sneakersBtnIcon {
   width: 19px;
@@ -246,6 +254,12 @@
   background-color: #000;
   width: 16px;
   height: 16px;
+}
+.wrap .productItem i {
+  font-size: 16px;
+  color: #677585;
+  margin-right: 10px;
+  transition: 0.3s ease;
 }
 .wrap .advContainer {
   width: 100%;

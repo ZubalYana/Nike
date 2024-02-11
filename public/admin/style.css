@@ -27,6 +27,10 @@
     margin-right: 10px;
     display: flex;
 }
+.orderItem{
+    font-size: 18px;
+    font-weight: 700;
+}
 .orderElement_userImg{
     width: 70px;
 }
@@ -84,4 +88,11 @@ i{
     color: #333;
     padding: 3px;
     margin-top: 8px;
+}
+.orderElement_orderSum{
+    font-size: 32px;
+    font-weight: 700;
+    background-color: #7BE498;
+    color: #333;
+    padding: 3px;
 }

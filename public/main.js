@@ -66,7 +66,7 @@ for(let el of db){
             <div class="colorCircle" id="green"></div>
         </div>
     </div>
-        <button class='addItem' id='${el.id}'><img class='sneakersBtnIcon' src='./imgs/sneakersBtn icon.png'>Add to cart</button>
+        <button class='addItem' id='${el.id}'><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
         </div>
         </div>`
     )

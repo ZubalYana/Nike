@@ -19,8 +19,12 @@ axios.get('http://localhost:3000/getorders')
             </div>
             <div class='separativeLine'></div>
 
-            <h3 class='orderItems'></h3>
-            <div>$${sum}</div>
+            <div class='orderItems'></div>
+            <div class='separativeLine'></div>
+
+            <div class='orderElement_orderSum'>$${sum}</div>
+            <div class='separativeLine'></div>
+
         </div>`
         )
         
