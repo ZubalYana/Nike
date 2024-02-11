@@ -110,6 +110,12 @@ function showCartInner(cardList){
     }
 }
 $('#confirmBtn').click(()=>{
+    let currentTime = new Date();
+    let hours = currentTime.getHours();
+    let minutes = currentTime.getMinutes();
+    let seconds = currentTime.getSeconds();
+    let formattedTime = hours + ":" + minutes + ":" + seconds;
+    console.log("Button clicked at: " + formattedTime);
     let data = {
         list: cardList,
         name: $('#userName').val(),
@@ -118,7 +124,9 @@ $('#confirmBtn').click(()=>{
         expiryDate: $('#expiryDate').val(),
         securityCode: $('#securityCode').val(),
         postOffice: $('#postOffice').val(),
+        orderTime: `Operation time: ${formattedTime}`,
     }
+    console.log(data.orderTime);
     axios.post('http://localhost:3000/save-order', data)
     $('.cartPopup_paymentContainer').css('display', 'none')
     $('.cartPopup_orderDetails').css('display', 'flex')
@@ -136,9 +144,13 @@ $('#confirmBtn').click(()=>{
         <h5>Name: ${$('#userName').val()}</h5>
         <h5>Phone:  ${$('#phone').val()}</h5>
         <h5>Post Office: ${$('#postOffice').val()}</h5>
+        <h5>Operation time: ${formattedTime}</h5>
         <h5>Expected arrival date: ${formattedDate}</h5>
         <p>*We could phone you or send a message to clarify some details of your order.</p>`
     )
+
+
+
 })
 $('#cart').click(()=>{
     $('.cartPopup').slideToggle(500);

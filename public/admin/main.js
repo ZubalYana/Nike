@@ -2,6 +2,7 @@ axios.get('http://localhost:3000/getorders')
 .then(res => {
     console.log(res.data)
     for(let el of res.data){
+        console.log(el)
         let str = '';
         for(let item of el.list){
             str += item.name + ' ';
@@ -24,6 +25,8 @@ axios.get('http://localhost:3000/getorders')
 
             <div class='orderElement_orderSum'>$${sum}</div>
             <div class='separativeLine'></div>
+            <div class='orderElement_orderTime'></div>
+
 
         </div>`
         )
