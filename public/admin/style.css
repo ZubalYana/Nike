@@ -107,8 +107,14 @@ button{
     border-radius: 20px;
     margin: 0 20px;
     transition: 0.3s ease;
+    cursor: pointer;
 }
 button:hover{
     background-color: #333;
     color: #F5E6FF;
+}
+.orderElement_orderTime{
+    font-size: 20px;
+    color: #333;
+    font-weight: 600;
 }

@@ -46,6 +46,11 @@ axios.get('http://localhost:3000/getorders')
             )
         }
     }
+    // $('.orderElement_delete').click(()=>{
+    //     fs.writeFile('orders.txt', '[]')
+    // })
     
 })
+
+
 
