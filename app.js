@@ -28,7 +28,8 @@ app.post('/save-order', (req, res) => {
     fileData.push({
         name: data.name,
         phone: data.phone,
-        list: data.list
+        list: data.list,
+        orderTime: data.orderTime
     })
     fs.writeFile('orders.txt', JSON.stringify(fileData), (err)=>{
         if(err){
