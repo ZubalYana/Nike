@@ -114,6 +114,7 @@ button:hover{
     color: #F5E6FF;
 }
 .orderElement_orderTime{
+    width: 200px;
     font-size: 20px;
     color: #333;
     font-weight: 600;
