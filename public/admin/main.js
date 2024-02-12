@@ -56,6 +56,16 @@ axios.get('http://localhost:3000/getorders')
         $('.gearPopup_container').slideUp(300)
 
     })
+    $('#addNewGoods').click(()=>{
+        $('.gearPopup_firstPage').css('display', 'none');
+        $('.gearPopup_secondPage').css('display', 'flex');
+
+    })
+    $('#popupXmark2').click(()=>{
+        $('.gearPopup_secondPage').css('display', 'none');
+        $('.gearPopup_firstPage').css('display', 'flex');
+
+    })
     
 })
 
