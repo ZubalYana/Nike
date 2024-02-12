@@ -46,9 +46,16 @@ axios.get('http://localhost:3000/getorders')
             )
         }
     }
-    // $('.orderElement_delete').click(()=>{
-    //     fs.writeFile('orders.txt', '[]')
-    // })
+
+    $('.gearPopup_container').hide(0)
+
+    $('#gear').click(()=>{
+        $('.gearPopup_container').slideDown(300)
+    })
+    $('#popupXmark').click(()=>{
+        $('.gearPopup_container').slideUp(300)
+
+    })
     
 })
 
