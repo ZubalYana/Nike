@@ -177,4 +177,11 @@ $('.xmark3').click(()=>{
 
 })
 
-
+axios.get('http://localhost:3000/add-goods')
+.then(res => {
+    console.log(res.data); 
+    db.push(newItem);
+})
+.catch(err => {
+    console.error('Error fetching goods:', err);
+});

@@ -70,4 +70,46 @@ axios.get('http://localhost:3000/getorders')
 })
 
 
+$('#createANewGood').click(() => {
+    let name = $('#goodsName').val();
+    let price = $('#goodsPrice').val();
+    let img = $('#goodsImg').val();
+    let bg = $('#goodsBg').val();
+
+    let newItem = {
+        name: name,
+        price: price,
+        img: img,
+        bg: bg,
+        previousPrice: '', 
+        backGroundColor: bg, 
+    };
+
+    axios.post('http://localhost:3000/add-goods', newItem)
+    .then(res => {
+        console.log(res.data); 
+    })
+    .catch(err => {
+        console.error('Error adding item:', err);
+    });
+});
+
+
+$(document).on('click', '#deleteGood', function() {
+    let orderName = $(this).siblings('.orderElement_name').text();
+    let orderPhone = $(this).siblings('.orderElement_phone').text();
+    axios.delete('http://localhost:3000/delete-order', {
+        data: {
+            name: orderName,
+            phone: orderPhone
+        }
+    })
+    .then(res => {
+        console.log(res.data);
+        $(this).closest('.orderElement').remove();
+    })
+    .catch(err => {
+        console.error('Error deleting order:', err);
+    });
+});
 
