@@ -29,8 +29,8 @@ axios.get('http://localhost:3000/getorders')
             <div class='orderElement_orderTime'>${el.orderTime}</div>
             <div class='separativeLine'></div>
 
-            <button class='orderElement_delete'>Delete</button>
-            <button class='orderElement_delete'>Archive</button>
+            <button class='orderElement_btn' id="deleteGood">Delete</button>
+            <button class='orderElement_btn' id="archiveGood">Archive</button>
 
         </div>`
         )

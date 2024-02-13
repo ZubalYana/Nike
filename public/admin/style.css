@@ -91,6 +91,16 @@
     padding: 3px;
     margin-top: 8px;
 }
+button{
+    width: 100px;
+    height: 60px;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 20px;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
 .orderElement_orderSum{
     font-size: 32px;
     font-weight: 700;
@@ -98,7 +108,7 @@
     color: #333;
     padding: 3px;
 }
-button{
+.orderElement_btn{
     width: 100px;
     height: 60px;
     background-color: #F5E6FF;
@@ -111,7 +121,7 @@ button{
     transition: 0.3s ease;
     cursor: pointer;
 }
-button:hover{
+.orderElement_btn:hover{
     background-color: #333;
     color: #F5E6FF;
 }
@@ -173,10 +183,40 @@ button:hover{
     padding: 40px;
     position: relative;
 }
+h3{
+    font-size: 24px;
+}
 .gearPopup_secondPage{
     display: none;
+    flex-direction: column;
     padding: 40px;
     width: 100%;
     height: 100%;
     position: relative;
+}
+input{
+    margin-top: 20px;
+    border-radius: 20px;
+    height: 40px;
+    font-size: 16px;
+    padding: 0 10px;
+    font-weight: 700;
+}
+#createANewGood{
+    width: 260px;
+    height: 60px;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #eee;
+    color: #333;
+    margin-top: 20px;
+    box-shadow: 5px 5px 4px #ccc;
+    i{
+        margin-right: 10px;
+    }
+}
+#createANewGood:hover{
+    background-color: #333;
+    color: #eee;
 }
