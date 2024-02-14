@@ -111,10 +111,17 @@ function showCartInner(cardList){
 }
 $('#confirmBtn').click(()=>{
     let currentTime = new Date();
+    let currentDate = new Date();
+    let expectedArrivalDate = new Date(currentDate);
+    expectedArrivalDate.setDate(currentDate.getDate() + 2);
+    let day = expectedArrivalDate.getDate();
+    let month = expectedArrivalDate.getMonth() + 1; 
+    let year = expectedArrivalDate.getFullYear();
+    let formattedDate = day + '/' + month + '/' + year;
     let hours = currentTime.getHours();
     let minutes = currentTime.getMinutes();
     let seconds = currentTime.getSeconds();
-    let formattedTime = hours + ":" + minutes + ":" + seconds;
+    let formattedTime = day-2 + '/' + month + '/' + year + ' at ' + hours + ":" + minutes + ":" + seconds;
     console.log("Button clicked at: " + formattedTime);
     let data = {
         list: cardList,
@@ -131,13 +138,6 @@ $('#confirmBtn').click(()=>{
     $('.cartPopup_paymentContainer').css('display', 'none')
     $('.cartPopup_orderDetails').css('display', 'flex')
 
-    let currentDate = new Date();
-    let expectedArrivalDate = new Date(currentDate);
-    expectedArrivalDate.setDate(currentDate.getDate() + 2);
-    let day = expectedArrivalDate.getDate();
-    let month = expectedArrivalDate.getMonth() + 1; 
-    let year = expectedArrivalDate.getFullYear();
-    let formattedDate = day + '/' + month + '/' + year;
 
     $('.cartPopup_orderDetails_infoContainer').append(
         `<h3>Your order was successful! Here is your info:</h3>
