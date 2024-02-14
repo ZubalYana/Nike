@@ -56,7 +56,7 @@ app.delete('/delete-order', (req, res) => {
     const { name, phone } = req.body;
     let fileData = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     fileData = fileData.filter(order => !(order.name === name && order.phone === phone));
-    fs.writeFile('orders.txt', JSON.stringify([`${fileData}`]), (err) => {
+    fs.writeFile('orders.txt', JSON.stringify(fileData), (err) => {
         if (err) {
             console.error('Error deleting order:', err);
             res.status(500).send('Error deleting order');
