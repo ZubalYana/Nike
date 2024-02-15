@@ -42,11 +42,7 @@ app.post('/save-order', (req, res) => {
     res.sendStatus(200);
 
 })
-app.post('/add-goods', (req, res) => {
-    const data = req.body;
-    console.log(data);
 
-});
 
 app.listen(PORT, () => {
     console.log(`Server work on PORT: ${PORT}`)
@@ -66,3 +62,15 @@ app.delete('/delete-order', (req, res) => {
         }
     });
 });
+
+
+
+
+
+app.get('/saveNewItem', (req, res) => {
+    const newItem = req.body;
+    console.log('Received newItem:', newItem);
+    res.send('New item saved successfully');
+});
+
+

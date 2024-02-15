@@ -177,12 +177,15 @@ $('.xmark3').click(()=>{
 
 })
 
-axios.get('http://localhost:3000/add-goods')
-.then(res => {
-    console.log(res.data); 
-    db.push(newItem);
-})
-.catch(err => {
-    console.error('Error fetching goods:', err);
-});
 
+
+// Fetch newItem from server
+axios.get('/saveNewItem')
+    .then(response => {
+        const newItem = response.data;
+        console.log('Received newItem from server:', newItem);
+        // Now you can use newItem as needed in your client-side code
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });

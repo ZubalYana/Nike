@@ -84,16 +84,16 @@ $('#createANewGood').click(() => {
         previousPrice: '', 
         backGroundColor: bg, 
     };
-    console.log(newItem)
 
-    axios.post('http://localhost:3000/add-goods', newItem)
-    .then(res => {
-        console.log(res.data); 
-    })
-    .catch(err => {
-        console.error('Error adding item:', err);
-    });
+    axios.post('/saveNewItem', newItem)
+        .then(response => {
+            console.log(response.data); 
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
 });
+
 
 
 $(document).on('click', '#deleteGood', function() {
