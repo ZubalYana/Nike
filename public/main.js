@@ -44,6 +44,7 @@ let db = [
         picHeight: 284, 
     },
 ];
+
 $('.cartPopup').hide(0);
 for(let el of db){
     $('.productContainer').append(
@@ -179,13 +180,15 @@ $('.xmark3').click(()=>{
 
 
 
-// Fetch newItem from server
-axios.get('/saveNewItem')
+axios.get('http://localhost:3000/saveNewItem')
     .then(response => {
         const newItem = response.data;
         console.log('Received newItem from server:', newItem);
-        // Now you can use newItem as needed in your client-side code
     })
     .catch(error => {
         console.error('Error:', error);
     });
+
+
+
+    

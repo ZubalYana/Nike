@@ -20,6 +20,12 @@ app.get('/getorders', (req,res) => {
     let fileData = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     res.json(fileData);
 })
+app.get('/saveNewItem', (req, res) => {
+    const newItem = req.body;
+    console.log('Received newItem:', newItem);
+    res.send('New item saved successfully');
+});
+
 app.post('/save-order', (req, res) => {
     const data = req.body;
     console.log(data);
@@ -42,11 +48,13 @@ app.post('/save-order', (req, res) => {
     res.sendStatus(200);
 
 })
+// app.post('/all-orders', (req, res) => {
+//     const data = req.body;
+//     console.log(data);
+
+// })
 
 
-app.listen(PORT, () => {
-    console.log(`Server work on PORT: ${PORT}`)
-})
 
 app.delete('/delete-order', (req, res) => {
     const { name, phone } = req.body;
@@ -67,10 +75,6 @@ app.delete('/delete-order', (req, res) => {
 
 
 
-app.get('/saveNewItem', (req, res) => {
-    const newItem = req.body;
-    console.log('Received newItem:', newItem);
-    res.send('New item saved successfully');
-});
-
-
+app.listen(PORT, () => {
+    console.log(`Server work on PORT: ${PORT}`)
+})

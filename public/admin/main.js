@@ -66,6 +66,7 @@ axios.get('http://localhost:3000/getorders')
         $('.gearPopup_firstPage').css('display', 'flex');
 
     })
+
     $('#createANewGood').click(() => {
         let name = $('#goodsName').val();
         let price = $('#goodsPrice').val();
@@ -81,7 +82,7 @@ axios.get('http://localhost:3000/getorders')
             backGroundColor: bg, 
         };
     
-        axios.post('/saveNewItem', newItem)
+        axios.post('http://localhost:3000/saveNewItem', newItem)
             .then(response => {
                 console.log(response.data); 
             })
@@ -89,6 +90,8 @@ axios.get('http://localhost:3000/getorders')
                 console.error('Error:', error);
             });
     });
+    
+
     $(document).on('click', '#deleteGood', function() {
         let orderName = $(this).siblings('.orderElement_name').text();
         let orderPhone = $(this).siblings('.orderElement_phone').text();
@@ -117,6 +120,7 @@ $('#popupXmark3').click(()=>{
     $('.gearPopup_EditingPage').css('display', 'none');
 
 })
+
     
 })
 
