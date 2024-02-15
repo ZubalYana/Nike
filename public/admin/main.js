@@ -84,6 +84,7 @@ $('#createANewGood').click(() => {
         previousPrice: '', 
         backGroundColor: bg, 
     };
+    console.log(newItem)
 
     axios.post('http://localhost:3000/add-goods', newItem)
     .then(res => {
