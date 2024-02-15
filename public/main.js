@@ -185,3 +185,4 @@ axios.get('http://localhost:3000/add-goods')
 .catch(err => {
     console.error('Error fetching goods:', err);
 });
+

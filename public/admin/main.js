@@ -70,29 +70,29 @@ axios.get('http://localhost:3000/getorders')
 })
 
 
-// $('#createANewGood').click(() => {
-//     let name = $('#goodsName').val();
-//     let price = $('#goodsPrice').val();
-//     let img = $('#goodsImg').val();
-//     let bg = $('#goodsBg').val();
+$('#createANewGood').click(() => {
+    let name = $('#goodsName').val();
+    let price = $('#goodsPrice').val();
+    let img = $('#goodsImg').val();
+    let bg = $('#goodsBg').val();
 
-//     let newItem = {
-//         name: name,
-//         price: price,
-//         img: img,
-//         bg: bg,
-//         previousPrice: '', 
-//         backGroundColor: bg, 
-//     };
+    let newItem = {
+        name: name,
+        price: price,
+        img: img,
+        bg: bg,
+        previousPrice: '', 
+        backGroundColor: bg, 
+    };
 
-//     axios.post('http://localhost:3000/add-goods', newItem)
-//     .then(res => {
-//         console.log(res.data); 
-//     })
-//     .catch(err => {
-//         console.error('Error adding item:', err);
-//     });
-// });
+    axios.post('http://localhost:3000/add-goods', newItem)
+    .then(res => {
+        console.log(res.data); 
+    })
+    .catch(err => {
+        console.error('Error adding item:', err);
+    });
+});
 
 
 $(document).on('click', '#deleteGood', function() {
