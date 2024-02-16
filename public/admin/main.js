@@ -116,6 +116,8 @@ axios.get('http://localhost:3000/getorders')
     $(document).on('click', '#deleteGood', function() {
         let orderName = $(this).siblings('.orderElement_name').text();
         let orderPhone = $(this).siblings('.orderElement_phone').text();
+        let orderElement = $(this).closest('.orderElement');
+
         axios.delete('http://localhost:3000/delete-order', {
             data: {
                 name: orderName,
@@ -124,13 +126,39 @@ axios.get('http://localhost:3000/getorders')
         })
         .then(res => {
             console.log(res.data);
-            $(this).closest('.orderElement').remove();
+            orderElement.remove();
+            orderElement.appendTo('.somewhere');
+            
+    
         })
         .catch(err => {
             console.error('Error deleting order:', err);
         });
     });
 
+
+    // $(document).on('click', '#deleteGood', function() {
+    //     let orderElement = $(this).closest('.orderElement');
+    //     let orderName = orderElement.find('.orderElement_name').text();
+    //     let orderPhone = orderElement.find('.orderElement_phone').text();
+        
+    //     axios.delete('http://localhost:3000/delete-order', {
+    //         data: {
+    //             name: orderName,
+    //             phone: orderPhone
+    //         }
+    //     })
+    //     .then(res => {
+    //         console.log(res.data);
+    //         orderElement.remove();
+    //         orderElement.appendTo('.somewhere');
+    //     })
+    //     .catch(err => {
+    //         console.error('Error deleting order:', err);
+    //     });
+    // });
+
+    
 $(document).on('click', '#archiveGood', function() {
     let orderElement = $(this).closest('.orderElement');
     let orderName = orderElement.find('.orderElement_name').text();
@@ -144,9 +172,7 @@ $(document).on('click', '#archiveGood', function() {
     })
     .then(res => {
         console.log(res.data);
-        // Remove the order element from its container
         orderElement.remove();
-        // Append the removed order element to the archivedGoodsContainer
         orderElement.appendTo('.archivedGoodsContainer');
         orderElement.find('.orderElement_orderSum').css('display', 'none');
         orderElement.find('.separativeLine').css('display', 'none');
@@ -161,7 +187,6 @@ $(document).on('click', '#archiveGood', function() {
         console.error('Error deleting order:', err);
     });
 });
-
 
 
 

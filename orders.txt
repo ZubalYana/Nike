@@ -1,1 +1,1 @@
-[{"name":"Alexa","phone":"0968983482","list":[{"id":3,"name":"Nike Nitro","price":135,"img":"./imgs/nike netro.png","bg":"#F7C29B","previousPrice":"$289","backGroundColor":"#F7C29B","picWidth":447,"picHeight":448},{"id":2,"name":"Air Jordan","price":199,"img":"./imgs/air jordan.png","bg":"#F5E6FF","previousPrice":"$289","backGroundColor":"#F5E6FF","picWidth":322,"picHeight":265}],"orderTime":"Operation time: 16/2/2024 at 23:52:8"}]
+[]
