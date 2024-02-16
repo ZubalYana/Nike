@@ -62,7 +62,22 @@ axios.get('http://localhost:3000/getorders')
 
     })
     $('#popupXmark2').click(()=>{
-        $('.gearPopup_secondPage').css('display', 'none');
+        $('#gearPopup_secondPage_addingGoods').css('display', 'none');
+        $('.gearPopup_firstPage').css('display', 'flex');
+
+    })
+    $('#popupXmark333').click(()=>{
+        $('.gearPopup_EditingPage').css('display', 'none');
+        $('.gearPopup_firstPage').css('display', 'flex');
+    
+    })
+    $('#archivedOrders').click(()=>{
+        $('.gearPopup_firstPage').css('display', 'none');
+        $('.gearPopup_archivedPage').css('display', 'flex');
+
+    })
+    $('#popupXmark4').click(()=>{
+        $('.gearPopup_archivedPage').css('display', 'none');
         $('.gearPopup_firstPage').css('display', 'flex');
 
     })
@@ -116,11 +131,7 @@ axios.get('http://localhost:3000/getorders')
     $('.gearPopup_EditingPage').css('display', 'flex');
 
 })
-$('#popupXmark3').click(()=>{
-    $('.gearPopup_firstPage').css('display', 'flex');
-    $('.gearPopup_EditingPage').css('display', 'none');
 
-})
 
     
 })

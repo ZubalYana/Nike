@@ -25,10 +25,10 @@
             <div class="gearPopup_firstPage">
                 <i class="fa-regular fa-circle-xmark popupXmark" id="popupXmark"></i>
                 <button class="gearPopup_btn" id="addNewGoods"><i class="fa-solid fa-circle-plus"></i>Add new goods</button>
-                <button class="gearPopup_btn"><i class="fa-regular fa-folder-open"></i>Archived orders</button>
+                <button class="gearPopup_btn" id="archivedOrders"><i class="fa-regular fa-folder-open"></i>Archived orders</button>
                 <button class="gearPopup_btn" id="editExistingGoods"><i class="fa-solid fa-pen-to-square"></i>Edit existing goods</button>
             </div>
-            <div class="gearPopup_secondPage">
+            <div class="gearPopup_secondPage" id="gearPopup_secondPage_addingGoods">
                 <i class="fa-regular fa-circle-xmark popupXmark" id="popupXmark2"></i>
                     <h3>Fill in the good info:</h3>
                     <input type="text" id="goodsName" placeholder="Good's name">
@@ -38,7 +38,11 @@
                     <button id="createANewGood"><i class="fa-solid fa-circle-plus"></i>Create new good</button>
             </div>
             <div class="gearPopup_EditingPage">
-                <i class="fa-regular fa-circle-xmark popupXmark" id="popupXmark3"></i>
+                <i class="fa-regular fa-circle-xmark popupXmark" id="popupXmark333"></i>
+            </div>
+            <div class="gearPopup_archivedPage">
+                <i class="fa-regular fa-circle-xmark popupXmark" id="popupXmark4"></i>
+                <div class="archivedGoodsContainer"><h2>You have no archived goods yet...</h2></div>
             </div>
 
         </div>

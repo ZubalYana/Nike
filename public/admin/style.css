@@ -231,3 +231,20 @@ input{
     height: 100%;
     position: relative;
 }
+.gearPopup_archivedPage{
+    display: none;
+    flex-direction: column;
+    padding: 40px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.archivedGoodsContainer{
+    width: 100%;
+    height: 100%;
+    h1{
+        font-size: 32px;
+        font-weight: 600;
+        color: #333;
+    }
+}
