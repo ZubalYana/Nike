@@ -66,6 +66,11 @@ axios.get('http://localhost:3000/getorders')
         $('.gearPopup_firstPage').css('display', 'flex');
 
     })
+    $('#editExistingGoods').click(()=>{
+        $('.gearPopup_firstPage').css('display', 'none');
+        $('.gearPopup_EditingPage').css('display', 'flex');
+    
+    })
     $('#popupXmark333').click(()=>{
         $('.gearPopup_EditingPage').css('display', 'none');
         $('.gearPopup_firstPage').css('display', 'flex');
@@ -126,11 +131,38 @@ axios.get('http://localhost:3000/getorders')
         });
     });
 
-    $('#editExistingGoods').click(()=>{
-    $('.gearPopup_firstPage').css('display', 'none');
-    $('.gearPopup_EditingPage').css('display', 'flex');
+$(document).on('click', '#archiveGood', function() {
+    let orderElement = $(this).closest('.orderElement');
+    let orderName = orderElement.find('.orderElement_name').text();
+    let orderPhone = orderElement.find('.orderElement_phone').text();
+    
+    axios.delete('http://localhost:3000/delete-order', {
+        data: {
+            name: orderName,
+            phone: orderPhone
+        }
+    })
+    .then(res => {
+        console.log(res.data);
+        // Remove the order element from its container
+        orderElement.remove();
+        // Append the removed order element to the archivedGoodsContainer
+        orderElement.appendTo('.archivedGoodsContainer');
+        orderElement.find('.orderElement_orderSum').css('display', 'none');
+        orderElement.find('.separativeLine').css('display', 'none');
+        orderElement.find('.orderElement_orderTime').css('display', 'none');
+        orderElement.find('.orderElement_btn').css('display', 'none');
+        orderElement.find('.orderItems').css('display', 'none');
 
-})
+        
+
+    })
+    .catch(err => {
+        console.error('Error deleting order:', err);
+    });
+});
+
+
 
 
     
