@@ -179,8 +179,7 @@ $('.xmark3').click(()=>{
 })
 
 
-
-axios.get('http://localhost:3000/saveNewItem')
+axios.get('/getNewItem')
     .then(response => {
         const newItem = response.data;
         console.log('Received newItem from server:', newItem);
@@ -188,7 +187,6 @@ axios.get('http://localhost:3000/saveNewItem')
     .catch(error => {
         console.error('Error:', error);
     });
-
 
 
     

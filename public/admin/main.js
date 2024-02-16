@@ -82,7 +82,7 @@ axios.get('http://localhost:3000/getorders')
             backGroundColor: bg, 
         };
     
-        axios.post('http://localhost:3000/saveNewItem', newItem)
+        axios.post('/saveNewItem', newItem)
             .then(response => {
                 console.log(response.data); 
             })
@@ -90,6 +90,7 @@ axios.get('http://localhost:3000/getorders')
                 console.error('Error:', error);
             });
     });
+    
     
 
     $(document).on('click', '#deleteGood', function() {

@@ -8,6 +8,7 @@ const fs = require('fs');
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 
 app.get('/', (req, res) => {
@@ -20,7 +21,7 @@ app.get('/getorders', (req,res) => {
     let fileData = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     res.json(fileData);
 })
-app.get('/saveNewItem', (req, res) => {
+app.post('/saveNewItem', (req, res) => {
     const newItem = req.body;
     console.log('Received newItem:', newItem);
     res.send('New item saved successfully');
