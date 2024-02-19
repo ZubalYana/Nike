@@ -32,7 +32,7 @@ axios.get('http://localhost:3000/getorders')
             <div>${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}</div></div>
             <div class='separativeLine'></div>
 
-            <button class='orderElement_btn deleteGood' id="deleteGood">Delete</button>
+            <button class='orderElement_btn deleteGood' id="code${el.time}">Delete</button>
             <button class='orderElement_btn' id="archiveGood">Archive</button>
 
         </div>`
