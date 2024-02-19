@@ -3,6 +3,8 @@ axios.get('http://localhost:3000/getorders')
     console.log(res.data)
 
     for(let el of res.data){
+        let time = new Date(el.time)
+
         console.log(el)
         let str = '';
         for(let item of el.list){
@@ -26,10 +28,11 @@ axios.get('http://localhost:3000/getorders')
 
             <div class='orderElement_orderSum'>$${sum}</div>
             <div class='separativeLine'></div>
-            <div class='orderElement_orderTime'>${el.orderTime}</div>
+            <div class='orderElement_orderTime'>            <div>${time.getDate()}/${time.getMonth()+1}/${time.getFullYear()}</div>
+            <div>${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}</div></div>
             <div class='separativeLine'></div>
 
-            <button class='orderElement_btn' id="deleteGood">Delete</button>
+            <button class='orderElement_btn deleteGood' id="deleteGood">Delete</button>
             <button class='orderElement_btn' id="archiveGood">Archive</button>
 
         </div>`
@@ -113,35 +116,11 @@ axios.get('http://localhost:3000/getorders')
     
     
 
-    $(document).on('click', '#deleteGood', function() {
-        let orderName = $(this).siblings('.orderElement_name').text();
-        let orderPhone = $(this).siblings('.orderElement_phone').text();
-        let orderElement = $(this).closest('.orderElement');
-
-        axios.delete('http://localhost:3000/delete-order', {
-            data: {
-                name: orderName,
-                phone: orderPhone
-            }
-        })
-        .then(res => {
-            console.log(res.data);
-            orderElement.remove();
-            orderElement.appendTo('.somewhere');
-            
-    
-        })
-        .catch(err => {
-            console.error('Error deleting order:', err);
-        });
-    });
-
-
     // $(document).on('click', '#deleteGood', function() {
+    //     let orderName = $(this).siblings('.orderElement_name').text();
+    //     let orderPhone = $(this).siblings('.orderElement_phone').text();
     //     let orderElement = $(this).closest('.orderElement');
-    //     let orderName = orderElement.find('.orderElement_name').text();
-    //     let orderPhone = orderElement.find('.orderElement_phone').text();
-        
+
     //     axios.delete('http://localhost:3000/delete-order', {
     //         data: {
     //             name: orderName,
@@ -152,11 +131,15 @@ axios.get('http://localhost:3000/getorders')
     //         console.log(res.data);
     //         orderElement.remove();
     //         orderElement.appendTo('.somewhere');
+            
+    
     //     })
     //     .catch(err => {
     //         console.error('Error deleting order:', err);
     //     });
     // });
+
+
 
     
 $(document).on('click', '#archiveGood', function() {
@@ -190,12 +173,21 @@ $(document).on('click', '#archiveGood', function() {
 
 
 
+
     
 })
 
+$('.wrap').click((e)=>{
+    console.log(e.target.id)
+    if(e.target.id != ''){
+        if((e.target.id).substring(0,4) == 'code'){
+            let orderId = (e.target.id).substring(4)
+            console.log(orderId)
+            axios.post('http://localhost:3000/remove-order', {id:orderId})
+            .then(()=>{
+                // location.reload();
+            })
+        }
 
-
-
-
-
-
+    }
+})
