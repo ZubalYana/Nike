@@ -19,6 +19,22 @@ app.get('/getorders', (req, res) => {
     let content = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     res.json(content);
 })
+// app.js (server side)
+
+// Assuming you have your goods data stored in 'goods.txt'
+app.get('/getGoodsData', (req, res) => {
+    fs.readFile('goods.txt', 'utf-8', (err, data) => {
+        if (err) {
+            console.error(err);
+            res.status(500).send('Error reading goods data');
+        } else {
+            // Parse the data from goods.txt and send it to the client
+            const goodsData = JSON.parse(data);
+            res.json(goodsData);
+        }
+    });
+});
+
 app.post('/remove-order', (req, res) => {
     const data = req.body;
     console.log(data.id);

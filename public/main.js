@@ -187,5 +187,16 @@ $('.xmark3').click(()=>{
 
 })
 
-
     
+
+    axios.get('/getGoodsData')
+        .then(response => {
+            db.push(response.data)
+            console.log(db);
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+
+
