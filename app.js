@@ -56,7 +56,25 @@ app.post('/save-order', (req, res) => {
         }
     })
 })
-
+app.post('/saveNewGoods', (req, res) => {
+    const data = req.body;
+    res.sendStatus(200);
+    let content = JSON.parse(fs.readFileSync('goods.txt', 'utf-8'));
+    content.push({
+        name: data.name,
+        price: data.price,
+        img: data.img,
+        bg: data.bg,
+        backGroundColor: data.bg, 
+    });
+    fs.writeFile('goods.txt', JSON.stringify(content), (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(`Товар збережено`)
+        }
+    })
+})
 
 app.listen(PORT, () => {
     console.log(`Server work on PORT: ${PORT}`)

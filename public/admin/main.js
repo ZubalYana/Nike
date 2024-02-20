@@ -101,11 +101,10 @@ axios.get('http://localhost:3000/getorders')
             price: price,
             img: img,
             bg: bg,
-            previousPrice: '', 
             backGroundColor: bg, 
         };
     
-        axios.post('/saveNewItem', newItem)
+        axios.post('/saveNewGoods', newItem)
             .then(response => {
                 console.log(response.data); 
             })
@@ -114,45 +113,11 @@ axios.get('http://localhost:3000/getorders')
             });
     });
     
-    
 
-
-
-    
-$(document).on('click', '#archiveGood', function() {
-    let orderElement = $(this).closest('.orderElement');
-    let orderName = orderElement.find('.orderElement_name').text();
-    let orderPhone = orderElement.find('.orderElement_phone').text();
-    
-    axios.delete('http://localhost:3000/delete-order', {
-        data: {
-            name: orderName,
-            phone: orderPhone
-        }
-    })
-    .then(res => {
-        console.log(res.data);
-        orderElement.remove();
-        orderElement.appendTo('.archivedGoodsContainer');
-        orderElement.find('.orderElement_orderSum').css('display', 'none');
-        orderElement.find('.separativeLine').css('display', 'none');
-        orderElement.find('.orderElement_orderTime').css('display', 'none');
-        orderElement.find('.orderElement_btn').css('display', 'none');
-        orderElement.find('.orderItems').css('display', 'none');
-
-        
-
-    })
-    .catch(err => {
-        console.error('Error deleting order:', err);
-    });
-});
-
-
-
-
-    
 })
+
+
+
 $('.wrap').click((e)=>{
     console.log(e.target.id)
     if(e.target.id != ''){
