@@ -160,9 +160,7 @@ $('.wrap').click((e)=>{
             let orderId = (e.target.id).substring(4)
             console.log(orderId)
             axios.post('http://localhost:3000/remove-order', {id:orderId})
-            .then(()=>{
-                // location.reload();
-            })
+            location.reload();
         }
 
     }
