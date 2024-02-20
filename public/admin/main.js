@@ -116,29 +116,6 @@ axios.get('http://localhost:3000/getorders')
     
     
 
-    // $(document).on('click', '#deleteGood', function() {
-    //     let orderName = $(this).siblings('.orderElement_name').text();
-    //     let orderPhone = $(this).siblings('.orderElement_phone').text();
-    //     let orderElement = $(this).closest('.orderElement');
-
-    //     axios.delete('http://localhost:3000/delete-order', {
-    //         data: {
-    //             name: orderName,
-    //             phone: orderPhone
-    //         }
-    //     })
-    //     .then(res => {
-    //         console.log(res.data);
-    //         orderElement.remove();
-    //         orderElement.appendTo('.somewhere');
-            
-    
-    //     })
-    //     .catch(err => {
-    //         console.error('Error deleting order:', err);
-    //     });
-    // });
-
 
 
     
@@ -176,7 +153,6 @@ $(document).on('click', '#archiveGood', function() {
 
     
 })
-
 $('.wrap').click((e)=>{
     console.log(e.target.id)
     if(e.target.id != ''){

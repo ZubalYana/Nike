@@ -44,7 +44,6 @@ let db = [
         picHeight: 284, 
     },
 ];
-
 $('.cartPopup').hide(0);
 for(let el of db){
     $('.productContainer').append(
