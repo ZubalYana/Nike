@@ -167,7 +167,16 @@ $('.xmark3').click(()=>{
         $('.cartPopup_ordersContainer').css('display', 'flex')
     }, 500);
 
-
+    $('#userName').val('');
+    $('#phone').val('');
+    $('#cardNum').val('');
+    $('#expiryDate').val('');
+    $('#securityCode').val('');
+    $('#postOffice').val('');
+    cardList = [];
+    showCartInner(cardList);
+    $('#header_icons_cardCount').text(`${cardList.length}`);
+    $('.cartPopup_ordersContainer_orders').empty();
 })
 
 
