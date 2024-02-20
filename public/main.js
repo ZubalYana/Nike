@@ -182,6 +182,9 @@ $('.xmark3').click(()=>{
     showCartInner(cardList);
     $('#header_icons_cardCount').text(`${cardList.length}`);
     $('.cartPopup_ordersContainer_orders').empty();
+    $('.cardPopupContainer_orderBtn').hide(0);
+    $('#cartPopup_ordersContainer_h3').html('You have no orders now. Check our goods!')
+
 })
 
 
