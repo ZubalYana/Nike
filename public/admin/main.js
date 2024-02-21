@@ -115,17 +115,28 @@ axios.get('http://localhost:3000/getorders')
             });
 
 
-            $('#goodsName').val('');
-            $('#goodsPrice').val('');
-            $('#goodsImg').val('');
-            $('#goodsBg').val('');
+            if ($('#goodsName').val() != '' && $('#goodsPrice').val() != '' && $('#goodsImg').val() != '' && $('#goodsBg').val() != '') {
+                $('#goodsName').val('');
+                $('#goodsPrice').val('');
+                $('#goodsImg').val('');
+                $('#goodsBg').val('');
+            
+                $('.gearPopup_container_notification').css('display', 'flex');
+            
+                setTimeout(() => {
+                    $('.gearPopup_container_notification').css('display', 'none');
+                }, 3000);
+            } else {
+                $('.gearPopup_container_notification').text('Fill in all the info');
+            
+                $('.gearPopup_container_notification').css('display', 'flex');
+            
+                setTimeout(() => {
+                    $('.gearPopup_container_notification').css('display', 'none');
+                }, 3000);
+            }
+            
 
-            $('.gearPopup_container_notification').css('display', 'flex')
-
-            setTimeout(() => {
-                $('.gearPopup_container_notification').css('display', 'none')
-
-            }, 3000);
     });
     
 
