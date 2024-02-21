@@ -113,6 +113,19 @@ axios.get('http://localhost:3000/getorders')
             .catch(error => {
                 console.error('Error:', error);
             });
+
+
+            $('#goodsName').val('');
+            $('#goodsPrice').val('');
+            $('#goodsImg').val('');
+            $('#goodsBg').val('');
+
+            $('.gearPopup_container_notification').css('display', 'flex')
+
+            setTimeout(() => {
+                $('.gearPopup_container_notification').css('display', 'none')
+
+            }, 3000);
     });
     
 

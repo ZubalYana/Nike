@@ -248,3 +248,18 @@ input{
         color: #333;
     }
 }
+.gearPopup_container_notification{
+    width: 300px;
+    height: 100px;
+    border-radius: 20px;
+    color: #333;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 700;
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    background-color: #fff;
+}
