@@ -212,7 +212,7 @@ $('.xmark3').click(()=>{
                         <div class="colorCircle" id="green"></div>
                     </div>
                 </div>
-                    <button class='addItem' id='${el.id}'><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
+                    <button class='addItem' id='5'><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
                     </div>
                     </div>`
                 )

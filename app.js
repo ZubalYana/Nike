@@ -14,21 +14,16 @@ app.get('/', (req, res) => {
 app.get('/admin', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'admin', 'index.html'));
 });
-
 app.get('/getorders', (req, res) => {
     let content = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     res.json(content);
 })
-// app.js (server side)
-
-// Assuming you have your goods data stored in 'goods.txt'
 app.get('/getGoodsData', (req, res) => {
     fs.readFile('goods.txt', 'utf-8', (err, data) => {
         if (err) {
             console.error(err);
             res.status(500).send('Error reading goods data');
         } else {
-            // Parse the data from goods.txt and send it to the client
             const goodsData = JSON.parse(data);
             res.json(goodsData);
         }
@@ -77,6 +72,7 @@ app.post('/saveNewGoods', (req, res) => {
     res.sendStatus(200);
     let content = JSON.parse(fs.readFileSync('goods.txt', 'utf-8'));
     content.push({
+        id: data.id,
         name: data.name,
         price: data.price,
         img: data.img,

@@ -95,8 +95,10 @@ axios.get('http://localhost:3000/getorders')
         let price = $('#goodsPrice').val();
         let img = $('#goodsImg').val();
         let bg = $('#goodsBg').val();
+        let id = '5';
     
         let newItem = {
+            id: id,
             name: name,
             price: price,
             img: img,
