@@ -48,32 +48,32 @@ $('.cartPopup').hide(0);
 $('.cardPopupContainer_orderBtn').hide(0);
 
 for(let el of db){
-    $('.productContainer').append(
-        `<div class="productItem">
-        <div class='productItem_imgBg' style="background-color: ${el.backGroundColor};">
-        <img class='sneakersImg' src='${el.img}' style="width: ${el.picWidth}px; height: ${el.picHeight}px; margin-right: 22px" ></div>
-        <div class='productItem_infoContainer'>
-        <h3>${el.name}</h3>
-        <div class='productItem_prices'>
-        <p>$${el.price}</p>
-        <p class='previousPrice'><s>${el.previousPrice}</s></p>
+        $('.productContainer').append(
+            `<div class="productItem">
+            <div class='productItem_imgBg' style="background-color: ${el.backGroundColor};">
+            <img class='sneakersImg' src='${el.img}' style="width: ${el.picWidth}px; height: ${el.picHeight}px; margin-right: 22px" ></div>
+            <div class='productItem_infoContainer'>
+            <h3>${el.name}</h3>
+            <div class='productItem_prices'>
+            <p>$${el.price}</p>
+            <p class='previousPrice'><s>${el.previousPrice}</s></p>
+            </div>
+            <div class="colorsContainer">
+            <div class="colorBtn">color</div>
+            <div class="colorsCircles">
+                <div class="colorCircle" id="main"></div>
+                <div class="colorCircle" id="red"></div>
+                <div class="colorCircle" id="orange"></div>
+                <div class="colorCircle" id="yellow"></div>
+                <div class="colorCircle" id="green"></div>
+            </div>
         </div>
-        <div class="colorsContainer">
-        <div class="colorBtn">color</div>
-        <div class="colorsCircles">
-            <div class="colorCircle" id="main"></div>
-            <div class="colorCircle" id="red"></div>
-            <div class="colorCircle" id="orange"></div>
-            <div class="colorCircle" id="yellow"></div>
-            <div class="colorCircle" id="green"></div>
-        </div>
-    </div>
-        <button class='addItem' id='${el.id}'><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
-        </div>
-        </div>`
-    )
+            <button class='addItem' id='${el.id}'><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
+            </div>
+            </div>`
+        )
+    }
 
-}
 let cardList = [];
 $('.addItem').click((e)=>{
     $('#cartPopup_ordersContainer_h3').html('You chose:')
@@ -191,7 +191,32 @@ $('.xmark3').click(()=>{
 
     axios.get('/getGoodsData')
         .then(response => {
-            db.push(response.data)
+            for(let el of response.data){
+                db.push(el);
+                $('.productContainer').append(
+                    `<div class="productItem">
+                    <div class='productItem_imgBg' style="background-color: ${el.backGroundColor};">
+                    <img class='sneakersImg' src='${el.img}' style="width: 200px; height: ${el.picHeight}px; margin-top: -35px" ></div>
+                    <div class='productItem_infoContainer'>
+                    <h3>${el.name}</h3>
+                    <div class='productItem_prices'>
+                    <p>$${el.price}</p>
+                    </div>
+                    <div class="colorsContainer">
+                    <div class="colorBtn">color</div>
+                    <div class="colorsCircles">
+                        <div class="colorCircle" id="main"></div>
+                        <div class="colorCircle" id="red"></div>
+                        <div class="colorCircle" id="orange"></div>
+                        <div class="colorCircle" id="yellow"></div>
+                        <div class="colorCircle" id="green"></div>
+                    </div>
+                </div>
+                    <button class='addItem' id='${el.id}'><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
+                    </div>
+                    </div>`
+                )
+            }
             console.log(db);
             console.log(response.data);
         })
