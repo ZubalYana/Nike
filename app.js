@@ -29,7 +29,6 @@ app.get('/getGoodsData', (req, res) => {
         }
     });
 });
-
 app.post('/remove-order', (req, res) => {
     const data = req.body;
     console.log(data.id);
@@ -48,7 +47,7 @@ app.post('/remove-order', (req, res) => {
             console.log(`Замовлення видалено`)
         }
     })
-})
+});
 app.post('/save-order', (req, res) => {
     const data = req.body;
     res.sendStatus(200);
@@ -66,7 +65,7 @@ app.post('/save-order', (req, res) => {
             console.log(`Замовлення збережено`)
         }
     })
-})
+});
 app.post('/saveNewGoods', (req, res) => {
     const data = req.body;
     res.sendStatus(200);
@@ -86,7 +85,7 @@ app.post('/saveNewGoods', (req, res) => {
             console.log(`Товар збережено`)
         }
     })
-})
+});
 
 app.listen(PORT, () => {
     console.log(`Server work on PORT: ${PORT}`)

@@ -1,7 +1,6 @@
 axios.get('http://localhost:3000/getorders')
 .then(res => {
     console.log(res.data)
-
     for(let el of res.data){
         let time = new Date(el.time)
 
@@ -33,7 +32,7 @@ axios.get('http://localhost:3000/getorders')
             <div class='separativeLine'></div>
 
             <button class='orderElement_btn deleteGood' id="code${el.time}">Delete</button>
-            <button class='orderElement_btn' id="archiveGood">Archive</button>
+            <button class='orderElement_btn' id="archive${el.time}">Archive</button>
 
         </div>`
         )
@@ -49,9 +48,7 @@ axios.get('http://localhost:3000/getorders')
             )
         }
     }
-
     $('.gearPopup_container').hide(0)
-
     $('#gear').click(()=>{
         $('.gearPopup_container').slideDown(300)
     })
@@ -89,7 +86,6 @@ axios.get('http://localhost:3000/getorders')
         $('.gearPopup_firstPage').css('display', 'flex');
 
     })
-
     $('#createANewGood').click(() => {
         let name = $('#goodsName').val();
         let price = $('#goodsPrice').val();
@@ -138,8 +134,6 @@ axios.get('http://localhost:3000/getorders')
             
 
     });
-    
-
 })
 
 
