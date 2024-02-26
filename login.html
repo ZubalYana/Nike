@@ -3,17 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Log in</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="./login.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Montserrat;
+        }
+        .wrap{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logginingInCon{
+            width: 600px;
+            height: 500px;
+            border: 3px #F7C29B solid;
+            box-shadow: 20px 20px #F7C29B;
+            padding: 60px;
+            border-radius: 50px;
+            color: #333;
+        }
+        h1{
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        input{
+            width: 300px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            padding-left: 10px;
+            border-radius: 15px;
+            margin: 10px 0 15px;
+            border: 2px #333 solid;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        button{
+            width: 160px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            font-weight: 700;
+            border-radius: 15px;
+            border: none;
+            background-color: #F7C29B;
+            transition: 0.5s ease;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+        button:hover{
+            background-color: #FFE2B5;
+        }
+    </style>
 </head>
 <body>
     <div class="wrap">
-        <h1>Log in</h1>
-        <form action="/login" method="POST">
-            <input type="text" id="username" name="username" required>
-            <input type="password" id="password" name="password" required>
+        <div class="logginingInCon">
+            <h1>Log in</h1>
+            <form action="/login" method="POST">
+                <input type="text" id="username" name="username" placeholder="User name" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+    
+                <button type="submit">Login</button>
+            </form>
+        </div>
 
-            <button type="submit">Login</button>
-        </form>
     </div>
 </body>
 </html>
