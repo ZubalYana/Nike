@@ -10,7 +10,7 @@ const fs = require('fs');
 
 
 const users = [
-    { id: 1, username: 'admin', password: '0000' },
+    { id: 1, username: 'admin', password: 'hello0000' },
     { id: 2, username: 'vitaliy', password: '1111' },
 ];
 passport.use(new LocalStrategy((username, password, done) => {
@@ -41,7 +41,7 @@ app.post('/login', passport.authenticate('local', {
 }))
 
 app.get('/admin', isLoggedIn, (req, res) => {
-    res.send('Ви ввійшли в адмін панель');
+    res.sendFile(path.join(__dirname, 'public', 'admin'));
 })
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'login.html'));
@@ -64,13 +64,12 @@ app.use((err, req, res, next) => {
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-app.get('/admin', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'admin', 'index.html'));
-});
+// app.get('/admin', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'admin', 'index.html'));
+// });
 app.get('/getorders', (req, res) => {
     let content = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     res.json(content);
@@ -143,8 +142,6 @@ app.post('/saveNewGoods', (req, res) => {
         }
     })
 });
-
 app.listen(PORT, () => {
     console.log(`Server work on PORT: ${PORT}`)
 })
-
