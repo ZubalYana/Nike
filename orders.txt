@@ -1,1 +1,1 @@
-[{"list":[{"id":3,"name":"Nike Nitro","price":135,"img":"./imgs/nike netro.png","bg":"#F7C29B","previousPrice":"$289","backGroundColor":"#F7C29B","picWidth":447,"picHeight":448},{"id":3,"name":"Nike Nitro","price":135,"img":"./imgs/nike netro.png","bg":"#F7C29B","previousPrice":"$289","backGroundColor":"#F7C29B","picWidth":447,"picHeight":448}],"name":"","phone":"","time":1708465164670}]
+[]
