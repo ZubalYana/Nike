@@ -67,9 +67,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-// app.get('/admin', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'public', 'admin', 'index.html'));
-// });
+
 app.get('/getorders', (req, res) => {
     let content = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     res.json(content);

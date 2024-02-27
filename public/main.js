@@ -115,40 +115,45 @@ function showCartInner(cardList){
     }
 }
 $('#confirmBtn').click(()=>{
-    let currentDate = new Date();
-    let expectedArrivalDate = new Date(currentDate);
-    expectedArrivalDate.setDate(currentDate.getDate() + 2);
-    let day = expectedArrivalDate.getDate();
-    let month = expectedArrivalDate.getMonth() + 1; 
-    let year = expectedArrivalDate.getFullYear();
-    let formattedDate = day + '/' + month + '/' + year;
-
-    let data = {
-        list: cardList,
-        name: $('#userName').val(),
-        phone: $('#phone').val(),
-        cardNum: $('#cardNum').val(),
-        expiryDate: $('#expiryDate').val(),
-        securityCode: $('#securityCode').val(),
-        postOffice: $('#postOffice').val(),
-        time: Date.now(),
-    }
-    console.log(data.time);
-    axios.post('http://localhost:3000/save-order', data)
+    if ($('#userName').val() != '' && $('#phone').val() != '' && $('#cardNum').val() != '' && $('#expiryDate').val() != '' && $('#securityCode').val() != ''){
+        let currentDate = new Date();
+        let expectedArrivalDate = new Date(currentDate);
+        expectedArrivalDate.setDate(currentDate.getDate() + 2);
+        let day = expectedArrivalDate.getDate();
+        let month = expectedArrivalDate.getMonth() + 1; 
+        let year = expectedArrivalDate.getFullYear();
+        let formattedDate = day + '/' + month + '/' + year;
     
-    $('.cartPopup_paymentContainer').css('display', 'none')
-    $('.cartPopup_orderDetails').css('display', 'flex')
+        let data = {
+            list: cardList,
+            name: $('#userName').val(),
+            phone: $('#phone').val(),
+            cardNum: $('#cardNum').val(),
+            expiryDate: $('#expiryDate').val(),
+            securityCode: $('#securityCode').val(),
+            postOffice: $('#postOffice').val(),
+            time: Date.now(),
+        }
+        console.log(data.time);
+        axios.post('http://localhost:3000/save-order', data)
+        
+        $('.cartPopup_paymentContainer').css('display', 'none')
+        $('.cartPopup_orderDetails').css('display', 'flex')
+    
+    
+        $('.cartPopup_orderDetails_infoContainer').append(
+            `<h3>Your order was successful! Here is your info:</h3>
+            <h5>Name: ${$('#userName').val()}</h5>
+            <h5>Phone:  ${$('#phone').val()}</h5>
+            <h5>Post Office: ${$('#postOffice').val()}</h5>
+    
+            <h5>Expected arrival date: ${formattedDate}</h5>
+            <p>*We could phone you or send a message to clarify some details of your order.</p>`
+        )
+    }else{
+        alert('Fill in the info!')
+    }
 
-
-    $('.cartPopup_orderDetails_infoContainer').append(
-        `<h3>Your order was successful! Here is your info:</h3>
-        <h5>Name: ${$('#userName').val()}</h5>
-        <h5>Phone:  ${$('#phone').val()}</h5>
-        <h5>Post Office: ${$('#postOffice').val()}</h5>
-
-        <h5>Expected arrival date: ${formattedDate}</h5>
-        <p>*We could phone you or send a message to clarify some details of your order.</p>`
-    )
 })
 $('#cart').click(()=>{
     $('.cartPopup').slideToggle(500);
