@@ -8,6 +8,9 @@
     <!-- <link rel="stylesheet" href="./login.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
     <style>
+        body{
+            overflow: hidden;
+        }
         *{
             margin: 0;
             padding: 0;
@@ -22,13 +25,13 @@
             align-items: center;
         }
         .logginingInCon{
-            width: 600px;
             height: 500px;
             border: 3px #F7C29B solid;
             box-shadow: 20px 20px #F7C29B;
-            padding: 60px;
+            padding: 50px;
             border-radius: 50px;
             color: #333;
+            background-color: #fff;
         }
         h1{
             font-size: 48px;
@@ -79,6 +82,113 @@
         p:hover{
             color: #F7C29B;
         }
+        .decorationCircle{
+            border-radius: 50%;
+            position: absolute;
+            z-index: -2;
+        
+        }
+        #decorationCircle1{
+            width: 260px;
+            height: 260px;
+            background-color: #7BE498;
+            top: -20px;
+            left: 12px;
+            animation: zigzag 4s infinite alternate ease-in-out;
+
+        }
+        #decorationCircle2{
+            width: 290px;
+            height: 290px;
+            background-color: #F5E6FF;
+            top: 40px;
+            right: 100px;
+            animation: chaoticSpin 4s infinite alternate linear;
+
+        }
+        #decorationCircle3{
+            width: 320px;
+            height: 320px;
+            background-color: #F5E594;
+            top: 400px;
+            left: 140px;
+            animation: flicker 3s infinite alternate ease-in-out;
+
+        }
+        #decorationCircle4{
+            width: 280px;
+            height: 280px;
+            background-color: #68EAEB;
+            top: 420px;
+            right: 360px;
+            animation: swirl 1s infinite alternate linear;
+
+        }
+        #decorationCircle5{
+            width: 270px;
+            height: 270px;
+            background-color: #F67280;
+            top: 70px;
+            left: 400px;
+            animation: bouncing 4s infinite alternate ease-in-out;
+
+        }
+        #decorationCircle6{
+            width: 210px;
+            height: 210px;
+            background-color: #D3FBD9;
+            top: 500px;
+            right: 60px;
+            animation: randomMovement 2s infinite alternate ease-in-out;
+        }
+        @keyframes zigzag {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1vw) translateY(1vh);
+  }
+}
+@keyframes chaoticSpin {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(1vw) rotate(10deg);
+  }
+}
+@keyframes flicker {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(1vw);
+  }
+}
+@keyframes swirl {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateX(1vw) rotate(720deg);
+  }
+}
+@keyframes bouncing {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1vh);
+  }
+}
+@keyframes randomMovement {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(calc(1vw ));
+  }
+}
     </style>
 </head>
 <body>
@@ -88,12 +198,18 @@
             <form action="/login" method="POST">
                 <input type="text" id="username" name="username" placeholder="User name" required>
                 <input type="password" id="password" name="password" placeholder="Password" required>
-    
                 <button type="submit">Login</button>
             </form>
             <p>Forgot password?</p>
             <p>Having problems?</p>
         </div>
+
+        <div class="decorationCircle" id="decorationCircle1"></div>
+        <div class="decorationCircle" id="decorationCircle2"></div>
+        <div class="decorationCircle" id="decorationCircle3"></div>
+        <div class="decorationCircle" id="decorationCircle4"></div>
+        <div class="decorationCircle" id="decorationCircle5"></div>
+        <div class="decorationCircle" id="decorationCircle6"></div>
 
     </div>
 </body>
