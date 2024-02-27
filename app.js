@@ -7,12 +7,11 @@ const app = express();
 const PORT = 3000;
 const path = require('path');
 const fs = require('fs');
-
-
 const users = [
     { id: 1, username: 'admin', password: 'hello0000' },
     { id: 2, username: 'vitaliy', password: '1111' },
 ];
+
 passport.use(new LocalStrategy((username, password, done) => {
     const user = users.find(u => u.username == username && u.password == password);
     if (user) {
@@ -39,7 +38,6 @@ app.post('/login', passport.authenticate('local', {
     failureRedirect: '/login',
     failureFlash: true
 }))
-
 app.get('/admin', isLoggedIn, (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'admin'));
 })
@@ -59,15 +57,12 @@ app.use((err, req, res, next) => {
     console.error(err);
     res.status(500).send('Something went wrong!');
 })
-
-
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
-
 app.get('/getorders', (req, res) => {
     let content = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     res.json(content);
