@@ -100,7 +100,9 @@ axios.get('http://localhost:3000/getorders')
             img: img,
             bg: bg,
             backGroundColor: bg, 
+            time: Date.now(),
         };
+        console.log(newItem.time)
     
         axios.post('/saveNewGoods', newItem)
             .then(response => {
