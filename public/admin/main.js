@@ -91,16 +91,15 @@ axios.get('http://localhost:3000/getorders')
         let price = $('#goodsPrice').val();
         let img = $('#goodsImg').val();
         let bg = $('#goodsBg').val();
-        let id = '5';
+        let time = Date.now();
     
         let newItem = {
-            id: id,
+            time: time,
             name: name,
             price: price,
             img: img,
             bg: bg,
             backGroundColor: bg, 
-            time: Date.now(),
         };
         console.log(newItem.time)
     

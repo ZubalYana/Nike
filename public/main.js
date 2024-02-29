@@ -1,62 +1,65 @@
 let db = [
-    {
-        id: 1,
-        name: 'Nike Air',
-        price: 180,
-        img: './imgs/nike air.png',
-        bg: '#7BE498',
-        previousPrice: '$289',
-        backGroundColor: '#7BE498',
-        picWidth: 354,
-        picHeight: 312, 
-    },
-    {
-        id: 2,
-        name: 'Air Jordan',
-        price: 199,
-        img: './imgs/air jordan.png',
-        bg: '#F5E6FF',
-        previousPrice: '$289',
-        backGroundColor: '#F5E6FF',
-        picWidth: 322,
-        picHeight: 265, 
-    },
-    {
-        id: 3,
-        name: 'Nike Nitro',
-        price: 135,
-        img: './imgs/nike netro.png',
-        bg: '#F7C29B',
-        previousPrice: '$289',
-        backGroundColor: '#F7C29B',
-        picWidth: 447,
-        picHeight: 448, 
-    },
-    {
-        id: 4,
-        name: 'Air Spain',
-        price: 149,
-        img: './imgs/nike spain.png',
-        bg: '#68EAEB',
-        previousPrice: '$199',
-        backGroundColor: '#68EAEB',
-        picWidth: 336,
-        picHeight: 284, 
-    },
+    // {
+    //     id: 1,
+    //     name: 'Nike Air',
+    //     price: 180,
+    //     img: './imgs/nike air.png',
+    //     bg: '#7BE498',
+    //     previousPrice: '$289',
+    //     backGroundColor: '#7BE498',
+    //     picWidth: 354,
+    //     picHeight: 312, 
+    // },
+    // {
+    //     id: 2,
+    //     name: 'Air Jordan',
+    //     price: 199,
+    //     img: './imgs/air jordan.png',
+    //     bg: '#F5E6FF',
+    //     previousPrice: '$289',
+    //     backGroundColor: '#F5E6FF',
+    //     picWidth: 322,
+    //     picHeight: 265, 
+    // },
+    // {
+    //     id: 3,
+    //     name: 'Nike Nitro',
+    //     price: 135,
+    //     img: './imgs/nike netro.png',
+    //     bg: '#F7C29B',
+    //     previousPrice: '$289',
+    //     backGroundColor: '#F7C29B',
+    //     picWidth: 447,
+    //     picHeight: 448, 
+    // },
+    // {
+    //     id: 4,
+    //     name: 'Air Spain',
+    //     price: 149,
+    //     img: './imgs/nike spain.png',
+    //     bg: '#68EAEB',
+    //     previousPrice: '$199',
+    //     backGroundColor: '#68EAEB',
+    //     picWidth: 336,
+    //     picHeight: 284, 
+    // },
 ];
 $('.cartPopup').hide(0);
 $('.cardPopupContainer_orderBtn').hide(0);
 
-for(let el of db){
+
+axios.get('/getGoodsData')
+.then(response => {
+    for(let el of response.data){
+        db.push(el);
         $('.productContainer').append(
             `<div class="productItem">
             <div class='productItem_imgBg' style="background-color: ${el.backGroundColor};">
-            <img class='sneakersImg' src='${el.img}' style="width: ${el.picWidth}px; height: ${el.picHeight}px; margin-right: 22px" ></div>
+            <img class='sneakersImg' src='${el.img}' style="width: 200px; height: ${el.picHeight}px; margin-top: -35px" ></div>
             <div class='productItem_infoContainer'>
             <h3>${el.name}</h3>
             <div class='productItem_prices'>
             <p>$${el.price}</p>
-            <p class='previousPrice'><s>${el.previousPrice}</s></p>
             </div>
             <div class="colorsContainer">
             <div class="colorBtn">color</div>
@@ -68,18 +71,21 @@ for(let el of db){
                 <div class="colorCircle" id="green"></div>
             </div>
         </div>
-            <button class='addItem' id='${el.id}'><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
+            <button class='addItem' id='${el.time}'><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
             </div>
             </div>`
         )
     }
+    console.log(db);
+    console.log(response.data);
 
-let cardList = [];
+    let cardList = [];
 $('.addItem').click((e)=>{
+
     $('#cartPopup_ordersContainer_h3').html('You chose:')
     $('.cardPopupContainer_orderBtn').show(1);
     for(let el of db){
-        if(el.id == e.target.id){
+        if(el.time == e.target.id){
             cardList.push(el);
             $('.cartPopup_ordersContainer_orders').append(
                 `
@@ -114,7 +120,14 @@ function showCartInner(cardList){
         )
     }
 }
-$('#confirmBtn').click(()=>{
+})
+.catch(error => {
+    console.error('Error:', error);
+});
+
+
+
+$('#confirmBtn').click((cardList)=>{
     if ($('#userName').val() != '' && $('#phone').val() != '' && $('#cardNum').val() != '' && $('#expiryDate').val() != '' && $('#securityCode').val() != ''){
         let currentDate = new Date();
         let expectedArrivalDate = new Date(currentDate);
@@ -194,39 +207,5 @@ $('.xmark3').click(()=>{
 
     
 
-    axios.get('/getGoodsData')
-        .then(response => {
-            for(let el of response.data){
-                db.push(el);
-                $('.productContainer').append(
-                    `<div class="productItem">
-                    <div class='productItem_imgBg' style="background-color: ${el.backGroundColor};">
-                    <img class='sneakersImg' src='${el.img}' style="width: 200px; height: ${el.picHeight}px; margin-top: -35px" ></div>
-                    <div class='productItem_infoContainer'>
-                    <h3>${el.name}</h3>
-                    <div class='productItem_prices'>
-                    <p>$${el.price}</p>
-                    </div>
-                    <div class="colorsContainer">
-                    <div class="colorBtn">color</div>
-                    <div class="colorsCircles">
-                        <div class="colorCircle" id="main"></div>
-                        <div class="colorCircle" id="red"></div>
-                        <div class="colorCircle" id="orange"></div>
-                        <div class="colorCircle" id="yellow"></div>
-                        <div class="colorCircle" id="green"></div>
-                    </div>
-                </div>
-                    <button class='addItem' id='5'><i class="fa-solid fa-cart-shopping"></i>Add to cart</button>
-                    </div>
-                    </div>`
-                )
-            }
-            console.log(db);
-            console.log(response.data);
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
 
 

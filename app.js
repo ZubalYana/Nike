@@ -120,7 +120,7 @@ app.post('/saveNewGoods', (req, res) => {
     res.sendStatus(200);
     let content = JSON.parse(fs.readFileSync('goods.txt', 'utf-8'));
     content.push({
-        id: data.id,
+        time: data.time,
         name: data.name,
         price: data.price,
         img: data.img,
