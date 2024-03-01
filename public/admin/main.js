@@ -1,3 +1,5 @@
+$('.gearPopup_container').hide(0)
+
 axios.get('http://localhost:3000/getorders')
 .then(res => {
     console.log(res.data)
@@ -48,7 +50,6 @@ axios.get('http://localhost:3000/getorders')
             )
         }
     }
-    $('.gearPopup_container').hide(0)
     $('#gear').click(()=>{
         $('.gearPopup_container').slideDown(300)
     })

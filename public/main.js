@@ -120,6 +120,28 @@ function showCartInner(cardList){
         )
     }
 }
+$('.xmark3').click(()=>{
+    $('.cartPopup').slideUp(500);
+    setTimeout(() => {
+        $('.cartPopup_orderDetails').css('display', 'none')
+        $('.cartPopup_ordersContainer').css('display', 'flex')
+    }, 500);
+
+    $('#userName').val('');
+    $('#phone').val('');
+    $('#cardNum').val('');
+    $('#expiryDate').val('');
+    $('#securityCode').val('');
+    $('#postOffice').val('');
+    cardList = [];
+    showCartInner(cardList);
+    $('#header_icons_cardCount').text(`${cardList.length}`);
+    $('.cartPopup_ordersContainer_orders').empty();
+    $('.cardPopupContainer_orderBtn').hide(0);
+    $('#cartPopup_ordersContainer_h3').html('You have no orders now. Check our goods!')
+
+})
+
 })
 .catch(error => {
     console.error('Error:', error);
@@ -182,27 +204,6 @@ $('.cardPopupContainer_orderBtn').click(()=>{
 $('.xmark2').click(()=>{
     $('.cartPopup_ordersContainer').css('display', 'flex')
     $('.cartPopup_paymentContainer').css('display', 'none')
-})
-$('.xmark3').click(()=>{
-    $('.cartPopup').slideUp(500);
-    setTimeout(() => {
-        $('.cartPopup_orderDetails').css('display', 'none')
-        $('.cartPopup_ordersContainer').css('display', 'flex')
-    }, 500);
-
-    $('#userName').val('');
-    $('#phone').val('');
-    $('#cardNum').val('');
-    $('#expiryDate').val('');
-    $('#securityCode').val('');
-    $('#postOffice').val('');
-    cardList = [];
-    showCartInner(cardList);
-    $('#header_icons_cardCount').text(`${cardList.length}`);
-    $('.cartPopup_ordersContainer_orders').empty();
-    $('.cardPopupContainer_orderBtn').hide(0);
-    $('#cartPopup_ordersContainer_h3').html('You have no orders now. Check our goods!')
-
 })
 
     

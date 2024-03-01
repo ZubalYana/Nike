@@ -434,7 +434,8 @@
   margin-right: 12px;
 }
 .cartPopup .cartPopup_ordersContainer .cardPopupContainer_orderImg {
-  height: 110px;
+  height: 90px;
+  margin-left: 15px;
 }
 .cartPopup .cartPopup_ordersContainer h2 {
   font-size: 20px;
