@@ -1,1 +1,1 @@
-[{"time":1709377563473,"name":"Nike","price":"300","img":"https://www.vhv.rs/dpng/f/411-4111795_nike-shoe-png-nike-shoes-png-hd-transparent.png","bg":"#E47B7B","backGroundColor":"#E47B7B"}]
+[{"time":1709406432083,"name":"Nike Air","price":"200","img":"./imgs/nike air.png","bg":"#7BE498","backGroundColor":"#7BE498"},{"time":1709406659071,"name":"Air Jordan","price":"342","img":"./imgs/air jordan.png","bg":"#F5E6FF","backGroundColor":"#F5E6FF"}]
