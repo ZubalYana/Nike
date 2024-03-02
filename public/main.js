@@ -1,49 +1,4 @@
-let db = [
-    // {
-    //     id: 1,
-    //     name: 'Nike Air',
-    //     price: 180,
-    //     img: './imgs/nike air.png',
-    //     bg: '#7BE498',
-    //     previousPrice: '$289',
-    //     backGroundColor: '#7BE498',
-    //     picWidth: 354,
-    //     picHeight: 312, 
-    // },
-    // {
-    //     id: 2,
-    //     name: 'Air Jordan',
-    //     price: 199,
-    //     img: './imgs/air jordan.png',
-    //     bg: '#F5E6FF',
-    //     previousPrice: '$289',
-    //     backGroundColor: '#F5E6FF',
-    //     picWidth: 322,
-    //     picHeight: 265, 
-    // },
-    // {
-    //     id: 3,
-    //     name: 'Nike Nitro',
-    //     price: 135,
-    //     img: './imgs/nike netro.png',
-    //     bg: '#F7C29B',
-    //     previousPrice: '$289',
-    //     backGroundColor: '#F7C29B',
-    //     picWidth: 447,
-    //     picHeight: 448, 
-    // },
-    // {
-    //     id: 4,
-    //     name: 'Air Spain',
-    //     price: 149,
-    //     img: './imgs/nike spain.png',
-    //     bg: '#68EAEB',
-    //     previousPrice: '$199',
-    //     backGroundColor: '#68EAEB',
-    //     picWidth: 336,
-    //     picHeight: 284, 
-    // },
-];
+let db = [];
 $('.cartPopup').hide(0);
 $('.cardPopupContainer_orderBtn').hide(0);
 
@@ -87,6 +42,7 @@ $('.addItem').click((e)=>{
     for(let el of db){
         if(el.time == e.target.id){
             cardList.push(el);
+            console.log(cardList)
             $('.cartPopup_ordersContainer_orders').append(
                 `
                 <div class="cardPopupContainer_order">
@@ -142,14 +98,9 @@ $('.xmark3').click(()=>{
 
 })
 
-})
-.catch(error => {
-    console.error('Error:', error);
-});
 
 
-
-$('#confirmBtn').click((cardList)=>{
+$('#confirmBtn').click(()=>{
     if ($('#userName').val() != '' && $('#phone').val() != '' && $('#cardNum').val() != '' && $('#expiryDate').val() != '' && $('#securityCode').val() != ''){
         let currentDate = new Date();
         let expectedArrivalDate = new Date(currentDate);
@@ -158,7 +109,8 @@ $('#confirmBtn').click((cardList)=>{
         let month = expectedArrivalDate.getMonth() + 1; 
         let year = expectedArrivalDate.getFullYear();
         let formattedDate = day + '/' + month + '/' + year;
-    
+
+        console.log(cardList)
         let data = {
             list: cardList,
             name: $('#userName').val(),
@@ -208,5 +160,7 @@ $('.xmark2').click(()=>{
 
     
 
-
-
+})
+.catch(error => {
+    console.error('Error:', error);
+});
