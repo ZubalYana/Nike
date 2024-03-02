@@ -12,9 +12,10 @@ axios.get('http://localhost:3000/getorders')
             str += item.name + ' ';
         }
         let sum = 0;
-        for(let item of el.list){
-            sum += item.price;
+        for (let item of el.list) {
+            sum += parseFloat(item.price);
         }
+        
         $('.ordersContainer').append(
             `<div class="orderElement">
             <img class='orderElement_userImg' src="./img/userImg.png">
