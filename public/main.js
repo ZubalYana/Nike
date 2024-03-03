@@ -95,7 +95,7 @@ $('.xmark3').click(()=>{
     $('.cartPopup_ordersContainer_orders').empty();
     $('.cardPopupContainer_orderBtn').hide(0);
     $('#cartPopup_ordersContainer_h3').html('You have no orders now. Check our goods!')
-
+    $('.cartPopup_orderDetails_infoContainer').empty();
 })
 
 
