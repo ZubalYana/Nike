@@ -550,6 +550,20 @@
   width: 32px;
 }
 
+.cookiesPopupContainer {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6274509804);
+  z-index: 9999;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
 button {
   cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
