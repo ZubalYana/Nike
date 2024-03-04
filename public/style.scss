@@ -582,6 +582,26 @@
         .cookiesPopup_textPart{
             width: 45%;
             padding: 60px;
+            h1{
+                font-size: 40px;
+            }
+            h4{
+                font-size: 16px;
+                font-weight: 400;
+                width: 380px;
+            }
+            .cookiesPopup_button{
+                width: 250px;
+                height: 70px;
+                border: #000 3px solid;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 20px;
+                font-size: 20px;
+                font-weight: 600;
+                margin-top: 20px;
+            }
         }
         .cookiesPopup_PicPart{
             width: 55%;
