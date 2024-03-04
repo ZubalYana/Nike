@@ -580,13 +580,42 @@
         border-radius: 50px;
         display: flex;
         .cookiesPopup_textPart{
-            width: 50%;
+            width: 45%;
             padding: 60px;
-
         }
         .cookiesPopup_PicPart{
-            width: 50%;
+            width: 55%;
             padding: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            .cookiePic{
+                position: absolute;
+            }
+            #cookieWithoutCrumbs{
+                width: 300px;
+            }
+            #cookie-crumb-1{
+                width: 70px;
+                top: 100px;
+                right: 110px;
+            }
+            #cookie-crumb-2{
+                width: 50px;
+                top: 155px;
+                right: 90px;
+            }
+            #cookie-crumb-3{
+                width: 40px;
+                top: 175px;
+                right: 135px;
+            }
+            #cookie-crumb-4{
+                width: 40px;
+                top: 210px;
+                right: 110px;
+            }
 
         }
     }
