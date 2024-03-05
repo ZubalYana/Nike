@@ -593,6 +593,13 @@
   font-size: 20px;
   font-weight: 600;
   margin-top: 20px;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.cookiesPopupContainer .cookiesPopup .cookiesPopup_textPart .cookiesPopup_button:hover {
+  background-color: #A56A4C;
+  border: #A56A4C 3px solid;
+  color: #000;
 }
 .cookiesPopupContainer .cookiesPopup .cookiesPopup_PicPart {
   width: 55%;
