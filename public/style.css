@@ -615,6 +615,7 @@
 }
 .cookiesPopupContainer .cookiesPopup .cookiesPopup_PicPart .cookiePic {
   position: absolute;
+  transition: 1s ease;
 }
 .cookiesPopupContainer .cookiesPopup .cookiesPopup_PicPart #cookieWithoutCrumbs {
   width: 300px;

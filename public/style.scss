@@ -624,6 +624,8 @@
             position: relative;
             .cookiePic{
                 position: absolute;
+                transition: 1s ease;
+
             }
             #cookieWithoutCrumbs{
                 width: 300px;
@@ -655,3 +657,4 @@
 button{
     cursor: pointer;
 }
+

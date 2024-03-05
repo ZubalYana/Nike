@@ -2,6 +2,67 @@ let db = [];
 $('.cartPopup').hide(0);
 $('.cardPopupContainer_orderBtn').hide(0);
 
+$('.cookiesPopup_PicPart').hover(
+    () => {
+        $('#cookie-crumb-1').css({
+            'width': '80px',
+            'top': '40px',
+            'right': '150px',
+            'transform': 'rotate(90deg)'
+        });
+        $('#cookie-crumb-2').css({
+            'width': '60px', 
+            'top': '90px',   
+            'right': '70px',
+            'transform': 'rotate(-120deg)'
+        });
+        $('#cookie-crumb-3').css({
+            'width': '50px', 
+            'top': '120px',   
+            'right': '160px',
+            'transform': 'rotate(144deg)'  
+        });
+        $('#cookie-crumb-4').css({
+            'width': '50px', 
+            'top': '150px',   
+            'right': '100px',
+            'transform': 'rotate(-184deg)'  
+        });
+        $('#cookieWithoutCrumbs').css({
+            'transform': 'rotate(-20deg)'  
+        });
+    },
+    () => {
+        $('#cookie-crumb-1').css({
+            'width': '70px', 
+            'top': '100px',   
+            'right': '110px',
+            'transform': 'rotate(0deg)'
+        });
+        $('#cookie-crumb-2').css({
+            'width': '50px', 
+            'top': '155px',   
+            'right': '90px',
+            'transform': 'rotate(0deg)'
+        });
+        $('#cookie-crumb-3').css({
+            'width': '40px', 
+            'top': '175px',   
+            'right': '135px',
+            'transform': 'rotate(0deg)'
+        });
+        $('#cookie-crumb-4').css({
+            'width': '40px', 
+            'top': '210px',   
+            'right': '110px',
+            'transform': 'rotate(0deg)'
+        });
+        $('#cookieWithoutCrumbs').css({
+            'transform': 'rotate(0deg)'  
+        });
+    }
+);
+
 
 axios.get('/getGoodsData')
 .then(response => {
