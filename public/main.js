@@ -63,6 +63,21 @@ $('.cookiesPopup_PicPart').hover(
     }
 );
 
+// if ($.cookie('read') == 'true') {
+//     $('.cookiesPopupContainer').css('display', 'none');
+// }
+$('#cookiesPopup_button').click(() => {
+    // if ($.cookie('read') == undefined) {
+    //     console.log('s')
+    //     let expDate = new Date();
+    //     expDate.setTime(expDate.getTime() + (10 * 60 * 1000));
+    //     $.cookie('read', true, { path: '/', expires: expDate });
+        $('.cookiesPopupContainer').css('display', 'none');
+
+    // }
+})
+
+
 
 axios.get('/getGoodsData')
 .then(response => {
