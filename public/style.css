@@ -601,6 +601,10 @@
   border: #A56A4C 3px solid;
   color: #000;
 }
+.cookiesPopupContainer .cookiesPopup .cookiesPopup_textPart .cartPopup_arrow {
+  width: 390px;
+  margin: 10px 0 0 50px;
+}
 .cookiesPopupContainer .cookiesPopup .cookiesPopup_PicPart {
   width: 55%;
   padding: 60px;
