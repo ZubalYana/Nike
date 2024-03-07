@@ -112,7 +112,7 @@ app.post('/archive-order', (req, res) => {
         if (err) {
             console.log(err)
         } else {
-            console.log(`Замовлення видалено`)
+            console.log(`Замовлення архівовано`)
         }
     })
 });
