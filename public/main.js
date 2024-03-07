@@ -1,6 +1,62 @@
 let db = [];
 $('.cartPopup').hide(0);
+
 $('.cardPopupContainer_orderBtn').hide(0);
+
+
+
+
+$(document).ready(function() {
+    // Check if the popup should be shown
+    checkPopupCookie();
+
+    // When the button is clicked, close the popup and set the cookie
+    $("#cookiesPopup_button").click(function() {
+        closePopup();
+    });
+});
+
+function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    const expires = "expires=" + d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+    const name = cname + "=";
+    const decodedCookie = decodeURIComponent(document.cookie);
+    const ca = decodedCookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkPopupCookie() {
+    const popupClosed = getCookie("popupClosed");
+    if (popupClosed === "true") {
+        $("#cookiesPopupContainer").css('display', 'none');
+        return;
+    } else {
+        $("#cookiesPopupContainer").css('display', 'flex');
+    }
+}
+
+function closePopup() {
+    $("#cookiesPopupContainer").hide();
+    setCookie("popupClosed", "true", 365); 
+}
+
+
+
+
 
 $('.cookiesPopup_PicPart').hover(
     () => {
@@ -63,19 +119,6 @@ $('.cookiesPopup_PicPart').hover(
     }
 );
 
-// if ($.cookie('read') == 'true') {
-//     $('.cookiesPopupContainer').css('display', 'none');
-// }
-$('#cookiesPopup_button').click(() => {
-    // if ($.cookie('read') == undefined) {
-    //     console.log('s')
-    //     let expDate = new Date();
-    //     expDate.setTime(expDate.getTime() + (10 * 60 * 1000));
-    //     $.cookie('read', true, { path: '/', expires: expDate });
-        $('.cookiesPopupContainer').css('display', 'none');
-
-    // }
-})
 
 
 
