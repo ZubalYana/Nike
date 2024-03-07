@@ -106,6 +106,9 @@ app.post('/archive-order', (req, res) => {
         if(el.time != data.id){
             updateContent.push(el);
         }
+        if(el.time == data.id){
+            console.log(el);
+        }
     }
     console.log(updateContent)
     fs.writeFile('orders.txt', JSON.stringify(updateContent), (err) => {
