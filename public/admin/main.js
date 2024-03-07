@@ -158,3 +158,12 @@ $('.wrap').click((e)=>{
 
     }
 })
+
+
+axios.get('http://localhost:3000/getArchivedorders')
+.then(res => {
+    console.log(res.data)
+    // for(let el of res.data){
+
+    // }
+})

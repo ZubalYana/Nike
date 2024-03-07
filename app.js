@@ -67,6 +67,10 @@ app.get('/getorders', (req, res) => {
     let content = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     res.json(content);
 })
+app.get('/getArchivedorders', (req, res) => {
+    let content = JSON.parse(fs.readFileSync('archivedOrders.txt', 'utf-8'));
+    res.json(content);
+})
 app.get('/getGoodsData', (req, res) => {
     fs.readFile('goods.txt', 'utf-8', (err, data) => {
         if (err) {
