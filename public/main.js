@@ -3,14 +3,8 @@ $('.cartPopup').hide(0);
 
 $('.cardPopupContainer_orderBtn').hide(0);
 
-
-
-
 $(document).ready(function() {
-    // Check if the popup should be shown
     checkPopupCookie();
-
-    // When the button is clicked, close the popup and set the cookie
     $("#cookiesPopup_button").click(function() {
         closePopup();
     });
@@ -53,10 +47,6 @@ function closePopup() {
     $("#cookiesPopupContainer").hide();
     setCookie("popupClosed", "true", 365); 
 }
-
-
-
-
 
 $('.cookiesPopup_PicPart').hover(
     () => {
@@ -118,9 +108,6 @@ $('.cookiesPopup_PicPart').hover(
         });
     }
 );
-
-
-
 
 axios.get('/getGoodsData')
 .then(response => {
