@@ -102,12 +102,15 @@ app.post('/archive-order', (req, res) => {
     console.log(data.id);
     let content = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     let updateContent = [];
+    let archivedCoods = [];
     for(let el of content){
         if(el.time != data.id){
             updateContent.push(el);
         }
         if(el.time == data.id){
-            console.log(el);
+            archivedCoods.push(el);
+            console.log(archivedCoods);
+
         }
     }
     console.log(updateContent)
