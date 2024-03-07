@@ -121,6 +121,13 @@ app.post('/archive-order', (req, res) => {
             console.log(`Замовлення архівовано`)
         }
     })
+    fs.writeFile('archivedOrders.txt', JSON.stringify(archivedCoods), (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(`Замовлення збережено`)
+        }
+    })
 });
 app.post('/save-order', (req, res) => {
     const data = req.body;
