@@ -149,6 +149,11 @@ $('.wrap').click((e)=>{
             console.log(orderId)
             axios.post('http://localhost:3000/remove-order', {id:orderId})
             location.reload();
+        }else if((e.target.id).substring(0,7) == 'archive'){
+            let orderId = (e.target.id).substring(7)
+            console.log(orderId)
+            axios.post('http://localhost:3000/archive-order', {id:orderId})
+            location.reload();
         }
 
     }

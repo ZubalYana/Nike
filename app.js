@@ -97,6 +97,25 @@ app.post('/remove-order', (req, res) => {
         }
     })
 });
+app.post('/archive-order', (req, res) => {
+    const data = req.body;
+    console.log(data.id);
+    let content = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
+    let updateContent = [];
+    for(let el of content){
+        if(el.time != data.id){
+            updateContent.push(el);
+        }
+    }
+    console.log(updateContent)
+    fs.writeFile('orders.txt', JSON.stringify(updateContent), (err) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(`Замовлення видалено`)
+        }
+    })
+});
 app.post('/save-order', (req, res) => {
     const data = req.body;
     res.sendStatus(200);
