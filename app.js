@@ -103,7 +103,7 @@ app.post('/remove-order', (req, res) => {
 });
 app.post('/archive-order', (req, res) => {
     const data = req.body;
-    console.log(data.id);
+    // console.log(data.id);
     let content = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     let updateContent = [];
     let archivedCoods = [];
@@ -114,7 +114,6 @@ app.post('/archive-order', (req, res) => {
         if(el.time == data.id){
             archivedCoods.push(el);
             console.log(archivedCoods);
-
         }
     }
     console.log(updateContent)

@@ -163,7 +163,30 @@ $('.wrap').click((e)=>{
 axios.get('http://localhost:3000/getArchivedorders')
 .then(res => {
     console.log(res.data)
-    // for(let el of res.data){
+    for(let el of res.data){
 
-    // }
+        $('.gearPopup_archivedPage_ArchivedOrders').append(
+            `<div class="orderElement">
+            <img class='orderElement_userImg' src="./img/userImg.png">
+            <div class='orderElement_nameAndPhoneCon'>
+            <h3 class='orderElement_name'>${el.name}</h3>
+            <h3 class='orderElement_phone'>${el.phone}</h3>
+            </div>
+            <div class='separativeLine'></div>
+
+            <div class='ArchivedorderItems'></div>
+            <div class='separativeLine'></div>
+
+            <div class='separativeLine'></div>
+
+        </div>`
+        )
+        for(let item of el.list){
+            let ArchivedOrderName = item.name;
+            console.log(ArchivedOrderName)
+            $('.ArchivedorderItems').append(ArchivedOrderName)
+
+        }
+
+    }
 })
