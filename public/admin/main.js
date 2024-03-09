@@ -172,12 +172,8 @@ axios.get('http://localhost:3000/getArchivedorders')
             <h3 class='orderElement_name'>${el.name}</h3>
             <h3 class='orderElement_phone'>${el.phone}</h3>
             </div>
-            <div class='separativeLine'></div>
 
             <div class='ArchivedorderItems'></div>
-            <div class='separativeLine'></div>
-
-            <div class='separativeLine'></div>
 
         </div>`
         )
