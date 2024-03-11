@@ -110,8 +110,7 @@ app.post('/archive-order', (req, res) => {
     for(let el of content){
         if(el.time != data.id){
             updateContent.push(el);
-        }
-        if(el.time == data.id){
+        }else if(el.time === data.id){
             archivedCoods.push(el);
             console.log(archivedCoods);
         }
