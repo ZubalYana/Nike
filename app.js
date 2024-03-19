@@ -11,7 +11,6 @@ const users = [
     { id: 1, username: 'admin', password: 'hello0000' },
     { id: 2, username: 'vitaliy', password: '1111' },
 ];
-
 passport.use(new LocalStrategy((username, password, done) => {
     const user = users.find(u => u.username == username && u.password == password);
     if (user) {
@@ -27,12 +26,10 @@ passport.deserializeUser((id, done) => {
     const user = users.find(u => u.id == id);
     done(null, user);
 })
-
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({ secret: 'secret-key', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
-
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/admin',
     failureRedirect: '/login',
@@ -44,15 +41,12 @@ app.get('/admin', isLoggedIn, (req, res) => {
 app.get('/login', (req, res) => {
     res.sendFile(path.join(__dirname, 'login.html'));
 })
-
 function isLoggedIn(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     }
     res.redirect('/login');
 }
-
-
 app.use((err, req, res, next) => {
     console.error(err);
     res.status(500).send('Something went wrong!');
@@ -103,33 +97,33 @@ app.post('/remove-order', (req, res) => {
 });
 app.post('/archive-order', (req, res) => {
     const data = req.body;
-    // console.log(data.id);
     let content = JSON.parse(fs.readFileSync('orders.txt', 'utf-8'));
     let updateContent = [];
     let archivedCoods = [];
-    for(let el of content){
-        if(el.time != data.id){
+
+    for (let el of content) {
+        if (el.time != data.id) {
             updateContent.push(el);
-        }else if(el.time === data.id){
+        } else {
             archivedCoods.push(el);
-            console.log(archivedCoods);
         }
     }
-    console.log(updateContent)
+
     fs.writeFile('orders.txt', JSON.stringify(updateContent), (err) => {
         if (err) {
-            console.log(err)
+            console.log(err);
         } else {
-            console.log(`Замовлення архівовано`)
+            console.log(`Замовлення архівовано`);
         }
-    })
-    fs.writeFile('archivedOrders.txt', JSON.stringify(archivedCoods), (err) => {
+    });
+
+    fs.appendFile('archivedOrders.txt', JSON.stringify(archivedCoods), (err) => {
         if (err) {
-            console.log(err)
+            console.log(err);
         } else {
-            console.log(`Замовлення збережено`)
+            console.log(`Замовлення збережено`);
         }
-    })
+    });
 });
 app.post('/save-order', (req, res) => {
     const data = req.body;
