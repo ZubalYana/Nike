@@ -89,6 +89,7 @@
     width: 250px;
     flex-wrap: wrap;
     display: flex; 
+    margin-left: 5px;
 }
 .orderItem_orderElName{
     background-color: #F7C29B;
@@ -96,7 +97,7 @@
     padding: 3px;
     margin-top: 8px;
 }
-.ArchivedorderItems{
+.ArchivedorderItem{
     background-color: #F7C29B;
     color: #333;
     padding: 3px;

@@ -164,6 +164,7 @@ axios.get('http://localhost:3000/getArchivedorders')
 .then(res => {
     console.log(res.data)
     for(let el of res.data){
+        console.log(`It's your el: ${el}`)
 
         $('.gearPopup_archivedPage_ArchivedOrders').append(
             `<div class="orderElement">
@@ -180,7 +181,7 @@ axios.get('http://localhost:3000/getArchivedorders')
         for(let item of el.list){
             let ArchivedOrderName = item.name;
             console.log(ArchivedOrderName)
-            $('.ArchivedorderItems').append(ArchivedOrderName)
+            $('.ArchivedorderItems').append(`<div class='ArchivedorderItem'>${ArchivedOrderName}</div>`)
 
         }
 

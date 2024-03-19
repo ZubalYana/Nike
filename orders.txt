@@ -1,1 +1,1 @@
-[]
+[{"list":[{"time":1709407000460,"name":"Nike Jordan","price":"150","img":"./imgs/Nike Jordan.png","bg":"#7B85E4","backGroundColor":"#7B85E4"}],"name":"Marta","phone":"0674594849","time":1710878032147},{"list":[{"time":1709494621556,"name":"Nike Air Force","price":"250","img":"./imgs/Air Force.png","bg":"#EB689F","backGroundColor":"#EB689F"},{"time":1709406852636,"name":"Nike Netro","price":"284","img":"./imgs/nike netro.png","bg":"#56CDC3","backGroundColor":"#56CDC3"}],"name":"Alexa","phone":"0968983482","time":1710878063915}]
