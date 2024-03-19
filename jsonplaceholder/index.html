@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js' integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw==' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.8/axios.js' integrity='sha512-pmaEGtUAy7E5gRmwjLqQAD/QWw0dL4Z59b6b+2HQkqQwQ+HcPLLb9/KbUNo5zr10WuXmbivK9nYVZOyDkMgZMg==' crossorigin='anonymous'></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.css' integrity='sha512-tx5+1LWHez1QiaXlAyDwzdBTfDjX07GMapQoFTS74wkcPMsI3So0KYmFe6EHZjI8+eSG0ljBlAQc3PQ5BTaZtQ==' crossorigin='anonymous'/>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Users:</h1>
+        <div class="usersContainer"></div>
+        <br><br><br><br><br>
+        <h1>Posts:</h1>
+        <div class="postsContainer"></div>
+
+        <div class="postPagesBtns">
+            <button id="prevPage">&lt;</button>
+            <button id="nextPage">&gt;</button>
+        </div>
+
+
+
+        <br><br><br><br><br>
+        <div class="postForm">
+            <h1>Create a post</h1>
+            <br><br>
+            <input type="text" id="title" placeholder="Title">
+            <input type="text" id="body" placeholder="Text">
+            <button id="postBtn">Post</button>
+        </div>
+
+        <div class="messagePopup">
+            <h2>Your post was posted successfully! You can see it there.</h2>
+            <button id="okeyBtn">Got it!</button>
+        </div>
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+</html>
